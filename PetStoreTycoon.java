@@ -8,6 +8,7 @@ import java.util.Scanner;
 final static String RESET = "\u001B[0m";
 final static String BLACK = "\u001B[30m";
 final static String GRAY = "\u001B[90m";
+final static String RED = "\u001B[31m";
 
 public class PetStoreTycoon {
     public static void main(String[] args) {
@@ -15,7 +16,7 @@ public class PetStoreTycoon {
         Scanner input = new Scanner(System.in);
 
         // Create a shelter database
-        animalShelter database = new animalShelter();
+        animalShelter shelter = new animalShelter();
         while (true) {
             // Print out the menu list
             System.out.println("Main menu ------------");
@@ -41,7 +42,9 @@ public class PetStoreTycoon {
     }
 
     // Runs the correct methods based on the command from the user
-    public static void menuInterpretor (String command, animalShelter database) {
-        if (command.equals("1")) animalShelter.printAllAnimals(database);
+    public static void menuInterpretor (String command, animalShelter shelter) {
+        //if (command.equals("1")) database.printAllAnimals();
+        
+        else System.out.println(RED + "Command not found" + RESET);
     }
 }
