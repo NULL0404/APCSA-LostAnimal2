@@ -17,4 +17,16 @@ public class animalShelter {
             }
         }
     }
+
+
+    // prints all lost animals of a specific species
+    public static void printLostOfSpecies(ArrayList<shelterAnimal> database, String species){
+        for(int i = 0; i < database.size(); i++){
+            if(database.get(i).isLost()){
+                if(database.get(i).getType().equals(species)){
+                    System.out.println(database.get(i));
+                }
+            }
+        }
+    }
 }
