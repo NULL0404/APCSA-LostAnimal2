@@ -4,17 +4,20 @@
 import java.util.Scanner;
 
 // Color Variables
+// These can be added to print statements to change the colors
 final static String RESET = "\u001B[0m";
 final static String BLACK = "\u001B[30m";
 final static String GRAY = "\u001B[90m";
-
 
 public class PetStoreTycoon {
     public static void main(String[] args) {
         // Set up user input
         Scanner input = new Scanner(System.in);
 
-        //while (true) {
+        // Create a shelter database
+        animalShelter database = new animalShelter();
+        while (true) {
+            // Print out the menu list
             System.out.println("Main menu ------------");
             System.out.print(GRAY); // Set console color to gray
             System.out.println("[1] Print all shelter animals");
@@ -28,7 +31,17 @@ public class PetStoreTycoon {
             System.out.println("[D] Add an animal to the database");
             System.out.println("[E] Modify an animal in the database");
             System.out.print(RESET); // Reset console color
+
+            // Get command from user
             System.out.print("Enter a command > ");
-        //}
+            String command = input.nextLine();
+            menuInterpretor(command, database);
+
+        }
+    }
+
+    // Runs the correct methods based on the command from the user
+    public static void menuInterpretor (String command, animalShelter database) {
+        if (command.equals("1")) animalShelter.printAllAnimals(database);
     }
 }
