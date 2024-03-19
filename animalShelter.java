@@ -18,7 +18,14 @@ public class animalShelter {
         }
     }
 
-    
+    // Print all adoptable animals
+    public void printAdoptable(){
+        for(shelterAnimal animal : database){
+            if(animal.isAdoptable()){
+                System.out.println(animal);
+            }
+        }
+    }
 
     // Print all shelter animals of a specific species
     public void printSpecies(String species){

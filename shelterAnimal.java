@@ -2,15 +2,21 @@ public class shelterAnimal {
     // instance variables
     private String nameOfAnimal;
     private String typeOfAnimal;
-    private int age;
+    private int sheltertime;
     private boolean tagged;
+    private boolean surendered;
 
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalAge, boolean isTagged) {
+    public shelterAnimal(String name, String type, int animalShelterTime, boolean isTagged) {
         nameOfAnimal = name;
         typeOfAnimal = type;
-        age = animalAge;
+        sheltertime = animalShelterTime;
         tagged = isTagged;
+    }
+
+    public boolean isAdoptable() {
+        if (surendered) return true;
+        return sheltertime > 14;
     }
 
     public String getName() {
@@ -29,12 +35,12 @@ public class shelterAnimal {
         typeOfAnimal = newType;
     }
 
-    public int getAge() {
-        return age;
+    public int getShelterTime() {
+        return sheltertime;
     }
 
-    public void setAge(int newAge) {
-        age = newAge;
+    public void setShelterTime(int newShelterTime) {
+        sheltertime = newShelterTime;
     }
 
     public boolean isTagged() {
