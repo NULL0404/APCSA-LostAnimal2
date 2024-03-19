@@ -2,18 +2,29 @@ import java.util.ArrayList;
 public class animalShelter {
     private ArrayList<shelterAnimal> database = new ArrayList<shelterAnimal>(); // Create the database
 
-    // prints all animals in the shelter
+    // Print all animals in the shelter
     public void printAllAnimals(){
-        for(int i = 0; i < database.size(); i++){
-            System.out.println(database.get(i));
+        for(shelterAnimal animal : database){
+            System.out.println(animal);
         }
     }
 
-    // prints all lost animals of a specific species
+    // Print all shelter animals that are chipped
+    public void printChip(){
+        for(shelterAnimal animal : database){
+            if(animal.isTagged()){
+                System.out.println(animal);
+            }
+        }
+    }
+
+    
+
+    // Print all shelter animals of a specific species
     public void printSpecies(String species){
-        for(int i = 0; i < database.size(); i++){
-            if(database.get(i).getType().equals(species)){
-                System.out.println(database.get(i));
+        for(shelterAnimal animal : database){
+            if(animal.getType().equals(species)){
+                System.out.println(animal);
             }
         }
     }
