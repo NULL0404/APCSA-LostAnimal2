@@ -9,23 +9,11 @@ public class animalShelter {
         }
     }
 
-    // prints all lost animals in the shelter
-    public void printLostAnimals(){
-        for(int i = 0; i < database.size(); i++){
-            if(database.get(i).isLost()){
-                System.out.println(database.get(i));
-            }
-        }
-    }
-
-
     // prints all lost animals of a specific species
-    public void printLostOfSpecies(String species){
+    public void printSpecies(String species){
         for(int i = 0; i < database.size(); i++){
-            if(database.get(i).isLost()){
-                if(database.get(i).getType().equals(species)){
-                    System.out.println(database.get(i));
-                }
+            if(database.get(i).getType().equals(species)){
+                System.out.println(database.get(i));
             }
         }
     }

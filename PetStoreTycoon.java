@@ -58,7 +58,7 @@ public class PetStoreTycoon {
             System.out.print("What species do you want to filter? > " + CYAN); // User input in cyan
             String species = input.nextLine();
             System.out.print(RESET); // Clear cyan color
-            shelter.printLostOfSpecies(species);
+            shelter.printSpecies(species);
         }
         
         else System.out.println(RED + "Command not found" + RESET);
