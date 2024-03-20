@@ -1,5 +1,8 @@
-public class plexiGlass extends shelterAnimal{
+public class cageType extends shelterAnimal{
     private boolean plexiGlass;
-    public void cageType(){
-        System.out.println("The cage type is plexi glass");}
+    private boolean wireMesh;
+    public void isPlexiglass(){
+       plexiGlass = true;}
+    public void isWiremesh(){
+       wireMesh = true;}
 }
