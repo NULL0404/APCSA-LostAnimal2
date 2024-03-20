@@ -85,6 +85,9 @@ public class PetStoreTycoon {
 
         shelter.addAnimal("Waltuh", "Male", 66, false, true);
         shelter.addAnimal("Gambit", "Cat", 4, true, true);
+        shelter.addAnimal("Rocket", "Cat", 6, true, true);
+        shelter.addAnimal("Bryan", "Dog", 43, true, true);
+        shelter.addAnimal("Robin", "Dog", 3, true, true);
         
     }
 }
