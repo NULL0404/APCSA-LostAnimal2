@@ -29,7 +29,7 @@ public class animalShelter {
     }
 
     // print all shelter animals that aren't fixed
-    public void printnonFixed(boolean isFixed) {
+    public void printNonFixed(boolean isFixed) {
         for (shelterAnimal animal : database) {
             if (animal.isFixed()) {
 
@@ -37,6 +37,11 @@ public class animalShelter {
                 System.out.println(animal);
             }
         }
+    }
+
+    public void addAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
+        shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed);
+        database.add(newAnimal);
     }
 
 }
