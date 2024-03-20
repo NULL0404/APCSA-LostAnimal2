@@ -56,4 +56,20 @@ public class shelterAnimal {
         fixed = newFixed;
     }
 
+    public void print() {
+        String output = "";
+        System.out.println("Name: " + nameOfAnimal);
+        System.out.println("Type: " + typeOfAnimal);
+        System.out.println("Age: " + age);
+        System.out.print("Fixed? ");
+        if (fixed) System.out.println("Yes");
+        else System.out.println("No");
+        System.out.print("Tagged? ");
+        if (tagged) System.out.println("Yes");
+        else System.out.println("No");
+    }
+
+    public String toString() {
+        return typeOfAnimal + ": \"" + nameOfAnimal + "\"";
+    }
 }
