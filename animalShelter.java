@@ -18,14 +18,7 @@ public class animalShelter {
         }
     }
 
-    // Print all adoptable animals
-    public void printAdoptable(){
-        for(shelterAnimal animal : database){
-            if(animal.isAdoptable()){
-                System.out.println(animal);
-            }
-        }
-    }
+    
 
     // Print all shelter animals of a specific species
     public void printSpecies(String species){
@@ -35,4 +28,26 @@ public class animalShelter {
             }
         }
     }
+
+ // print all shelter animals that aren't fixed
+ public void printnonFixed(boolean isFixed){
+    for(shelterAnimal animal : database){
+        if(animal.isFixed()){
+            
+        }else{
+            System.out.println(animal);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 }
