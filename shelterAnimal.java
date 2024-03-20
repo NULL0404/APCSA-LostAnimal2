@@ -48,4 +48,12 @@ public class shelterAnimal {
         tagged = newTagged;
     }
 
+    public boolean isFixed() {
+        return fixed;
+    }
+
+    public void setFixed(boolean newFixed) {
+        fixed = newFixed;
+    }
+
 }
