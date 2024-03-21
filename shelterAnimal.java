@@ -2,21 +2,18 @@ public class shelterAnimal {
     // instance variables
     private String nameOfAnimal;
     private String typeOfAnimal;
-    private int sheltertime;
+    private int age;
     private boolean tagged;
-    private boolean surendered;
+    private boolean fixed;
+
 
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalShelterTime, boolean isTagged) {
+    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
         nameOfAnimal = name;
         typeOfAnimal = type;
-        sheltertime = animalShelterTime;
+        age = animalAge;
         tagged = isTagged;
-    }
-
-    public boolean isAdoptable() {
-        if (surendered) return true;
-        return sheltertime > 14;
+        fixed = isFixed;
     }
 
     public String getName() {
@@ -35,12 +32,12 @@ public class shelterAnimal {
         typeOfAnimal = newType;
     }
 
-    public int getShelterTime() {
-        return sheltertime;
+    public int getAge() {
+        return age;
     }
 
-    public void setShelterTime(int newShelterTime) {
-        sheltertime = newShelterTime;
+    public void setAge(int newAge) {
+        age = newAge;
     }
 
     public boolean isTagged() {
@@ -51,4 +48,28 @@ public class shelterAnimal {
         tagged = newTagged;
     }
 
+    public boolean isFixed() {
+        return fixed;
+    }
+
+    public void setFixed(boolean newFixed) {
+        fixed = newFixed;
+    }
+
+    public void print() {
+        String output = "";
+        System.out.println("Name: " + nameOfAnimal);
+        System.out.println("Type: " + typeOfAnimal);
+        System.out.println("Age: " + age);
+        System.out.print("Fixed? ");
+        if (fixed) System.out.println("Yes");
+        else System.out.println("No");
+        System.out.print("Tagged? ");
+        if (tagged) System.out.println("Yes");
+        else System.out.println("No");
+    }
+
+    public String toString() {
+        return typeOfAnimal + ": \"" + nameOfAnimal + "\"";
+    }
 }
