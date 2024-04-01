@@ -39,9 +39,19 @@ public class animalShelter {
         }
     }
 
+    // adding the animal
     public void addAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
         shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed);
         database.add(newAnimal);
+    }
+
+    // removing the animal
+    public void removeAnimal(String name){
+        for (shelterAnimal animal : database) {
+            if (animal.getName() == name){
+                database.remove(animal);
+            }
+        }
     }
 
 }
