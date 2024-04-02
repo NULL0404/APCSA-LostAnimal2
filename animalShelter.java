@@ -44,7 +44,7 @@ public class animalShelter {
 
     // adding the animal
     public void addAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
-        shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed, animalAge, isFixed);
+        shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed, animalAge, isFixed, animalAge);
         database.add(newAnimal);
         totalAnimals++;
         if(type.equals("Dog")) numDogs++;
