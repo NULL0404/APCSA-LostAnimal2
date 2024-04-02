@@ -6,16 +6,18 @@ public class shelterAnimal {
     private boolean tagged;
     private boolean fixed;
     private int daysIn;
+    private boolean surrendered;
 
 
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter) {
+    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter, boolean isSurrendered) {
         nameOfAnimal = name;
         typeOfAnimal = type;
         age = animalAge;
         tagged = isTagged;
         fixed = isFixed;
         daysIn = daysInShelter;
+        surrendered = isSurrendered;
     }
 
     public String getName() {
@@ -56,6 +58,10 @@ public class shelterAnimal {
 
     public void setFixed(boolean newFixed) {
         fixed = newFixed;
+    }
+
+    public int returnDays(){
+        return daysIn;
     }
 
     public void print() {

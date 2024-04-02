@@ -67,4 +67,13 @@ public class animalShelter {
         }
     }
 
+    // printing all adoptable animals
+    public void printAdoptables(){
+        for (shelterAnimal animal : database){
+            if(animal.returnDays() >= 14){
+                System.out.println(animal);
+            }
+        }
+    }
+
 }
