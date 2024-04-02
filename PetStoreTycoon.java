@@ -52,7 +52,12 @@ public class PetStoreTycoon {
 
     // Runs the correct methods based on the command from the user
     public static void menuInterpretor (String command, animalShelter shelter) {
-        if (command.equals("1")) shelter.printAllAnimals();
+
+        // menu workings
+        if (command.equals("1")) shelter.printAllAnimals(); // menu for printing all animals
+
+        if (command.equals("2")) shelter.printChip(); // menu for printing animals with chips
+
         else if (command.equals("3")) {
             // Ask the user for the species and run the printLostOfSpecies function on that input
             System.out.print("What species do you want to filter? > " + CYAN); // User input in cyan
@@ -60,7 +65,10 @@ public class PetStoreTycoon {
             System.out.print(RESET); // Clear cyan color
             shelter.printSpecies(species);
         }
-        
+
+        if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
+
+
         else System.out.println(RED + "Command not found" + RESET);
     }
 
