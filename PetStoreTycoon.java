@@ -72,21 +72,21 @@ public class PetStoreTycoon {
         shelter.addAnimal("Ethan", "Hippo", 16, false, false);
         
         shelter.addAnimal("Joshua", "Burro", 16, true, true);
-        shelter.addAnimal("Joseph Robinette Biden Jr.", "Tortoise", 900, true, false);
-        shelter.addAnimal("Tonald Dohn Jrump", "Baboon", 77, false, false);
-        shelter.addAnimal("Jordan Belfort", "Cheetah", 4, false, true);
+        shelter.addAnimal("Joseph Robinette Biden Jr.", "Cat", 900, true, false);
+        shelter.addAnimal("Tonald Dohn Jrump", "Cat", 77, false, false);
+        shelter.addAnimal("Jordan Belfort", "Cat", 4, false, true);
         shelter.addAnimal("Tangerine", "Dog", 8, true, true);
         
         shelter.addAnimal("Meatball", "Dog", 2, false, true);
         shelter.addAnimal("Jack", "Dog", 3, false, true);
         shelter.addAnimal("Keivan", "Parapithecidae", 17, true, false);
-        shelter.addAnimal("Gribber", "Sloth", 16, true, true);
+        shelter.addAnimal("Gribber", "Cat", 16, true, true);
         shelter.addAnimal("Justin", "Pool-Playing Shark", 17, true, false);
 
-        shelter.addAnimal("Waltuh", "Male", 66, false, true);
+        shelter.addAnimal("Waltuh", "Cat", 66, false, true);
         shelter.addAnimal("Gambit", "Cat", 4, true, true);
         shelter.addAnimal("Rocket", "Cat", 6, true, true);
-        shelter.addAnimal("Bryan", "Dog", 43, true, true);
+        shelter.addAnimal("Bryan", "Cat", 43, true, true);
         shelter.addAnimal("Robin", "Dog", 3, true, true);
         
     }
