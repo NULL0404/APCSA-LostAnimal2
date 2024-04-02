@@ -44,33 +44,36 @@ public class animalShelter {
 
     // adding the animal
     public void addAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
-        shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed);
+        shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed, animalAge, isFixed);
         database.add(newAnimal);
         totalAnimals++;
-        if(type.equals("Dog", "dog")){
-            numDogs++;}
-        else if(type.equals("Cat", "cat")){
-            numCats++;}
-        public void totalAni(){
-            return totalAnimals;}
-        public void totalDog(){
-            return numDogs;}
-        public void totalCat(){
-            return numCats;}
- 
+        if(type.equals("Dog")) numDogs++;
+        else numCats++;
+    }
+
+    public int getTotal() {
+        return totalAnimals;
+    }
+    public int getTotalDogs() {
+        return numDogs;
+    }
+    public int totalCat() {
+        return numCats;
+    }
+
     // removing the animal
-    public void removeAnimal(String name){
+    public void removeAnimal(String name) {
         for (shelterAnimal animal : database) {
-            if (animal.getName() == name){
+            if (animal.getName() == name) {
                 database.remove(animal);
             }
         }
     }
 
     // printing all adoptable animals
-    public void printAdoptables(){
-        for (shelterAnimal animal : database){
-            if(animal.returnDays() >= 14){
+    public void printAdoptables() {
+        for (shelterAnimal animal : database) {
+            if (animal.returnDays() >= 14) {
                 System.out.println(animal);
             }
         }
