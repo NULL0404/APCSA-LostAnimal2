@@ -68,6 +68,10 @@ public class PetStoreTycoon {
 
         if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
 
+        if (command.equals("E")){
+            System.out.println("Name or ")
+        }
+
 
         else System.out.println(RED + "Command not found" + RESET);
     }

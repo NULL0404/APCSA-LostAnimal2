@@ -7,10 +7,11 @@ public class shelterAnimal {
     private boolean fixed;
     private int daysIn;
     private boolean surrendered;
+    private int microchip;
 
 
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter, boolean isSurrendered) {
+    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter, boolean isSurrendered, int microchipData) {
         nameOfAnimal = name;
         typeOfAnimal = type;
         age = animalAge;
@@ -18,6 +19,7 @@ public class shelterAnimal {
         fixed = isFixed;
         daysIn = daysInShelter;
         surrendered = isSurrendered;
+        microchip = microchipData;
     }
 
     public String getName() {
