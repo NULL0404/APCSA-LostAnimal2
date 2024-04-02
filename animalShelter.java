@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 public class animalShelter {
     private ArrayList<shelterAnimal> database = new ArrayList<shelterAnimal>(); // Create the database
+    private int totalAnimals;
+    private int numDogs;
+    private int numCats;
 
     // Print all animals in the shelter
     public void printAllAnimals() {
@@ -43,8 +46,18 @@ public class animalShelter {
     public void addAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
         shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed);
         database.add(newAnimal);
-    }
-
+        totalAnimals++;
+        if(type.equals("Dog", "dog")){
+            numDogs++;}
+        else if(type.equals("Cat", "cat")){
+            numCats++;}
+        public void totalAni(){
+            return totalAnimals;}
+        public void totalDog(){
+            return numDogs;}
+        public void totalCat(){
+            return numCats;}
+ 
     // removing the animal
     public void removeAnimal(String name){
         for (shelterAnimal animal : database) {
