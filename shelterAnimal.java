@@ -5,15 +5,17 @@ public class shelterAnimal {
     private int age;
     private boolean tagged;
     private boolean fixed;
+    private int daysIn;
 
 
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
+    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter) {
         nameOfAnimal = name;
         typeOfAnimal = type;
         age = animalAge;
         tagged = isTagged;
         fixed = isFixed;
+        daysIn = daysInShelter;
     }
 
     public String getName() {
