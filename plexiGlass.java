@@ -1,8 +1,8 @@
-public class cageType extends shelterAnimal{
-    private boolean plexiGlass;
-    private boolean wireMesh;
-    public void isPlexiglass(){
-       plexiGlass = true;}
-    public void isWiremesh(){
-       wireMesh = true;}
+public class aniType extends shelterAnimal{
+    private boolean dog;
+    private boolean cat;
+    public void isDog(){
+       dog = true;}
+    public void isCat(){
+       cat = true;}
 }
