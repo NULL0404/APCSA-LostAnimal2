@@ -26,6 +26,14 @@ public class shelterAnimal {
         return nameOfAnimal;
     }
 
+    public boolean getSurrendered(){
+        return isSurrendered;
+    }
+
+    public int getMicrochip(){
+        return microchipData;
+    }
+
     public void setName(String newName) {
         nameOfAnimal = newName;
     }
