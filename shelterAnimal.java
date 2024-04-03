@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class shelterAnimal {
     // instance variables
     private String nameOfAnimal;
@@ -9,9 +11,9 @@ public class shelterAnimal {
     private boolean surrendered;
     private String microchip;
 
-
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter, boolean isSurrendered, String microchipData) {
+    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter,
+            boolean isSurrendered, String microchipData) {
         nameOfAnimal = name;
         typeOfAnimal = type;
         age = animalAge;
@@ -26,12 +28,12 @@ public class shelterAnimal {
         return nameOfAnimal;
     }
 
-    public boolean getSurrendered(){
-        return isSurrendered;
+    public boolean getSurrendered() {
+        return surrendered;
     }
 
-    public int getMicrochip(){
-        return microchipData;
+    public String getMicrochip() {
+        return microchip;
     }
 
     public void setName(String newName) {
@@ -70,19 +72,19 @@ public class shelterAnimal {
         fixed = newFixed;
     }
 
-    public int getDays(){
+    public int getDays() {
         return daysIn;
     }
 
-    public void setDays(int newDays){
+    public void setDays(int newDays) {
         daysIn = newDays;
     }
 
-    public String getChip(){
+    public String getChip() {
         return microchip;
     }
 
-    public void setChip(String newChip){
+    public void setChip(String newChip) {
         microchip = newChip;
     }
 

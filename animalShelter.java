@@ -100,10 +100,30 @@ public class animalShelter {
 
                 if(modifier.equals("Days In")){ // if they want to change how many days in
                     animal.setDays(Integer.parseInt(newData));}
-                    
+
                 if(modifier.equals("Microchip")){ // if they want to change chip data
                     animal.setChip(newData);}
             }
+        }
+    }
+
+    // print animals in order of time in shelter(shortest to longest)
+    public void printOrganized(){
+        ArrayList<Integer> temporary = new ArrayList<Integer>();
+        for(int i = 0; i < database.size()-1; i++){
+            int minIndex = i;
+            for(int j = i+1; j < database.size(); j++){
+                if(database.get(j).getDays() < database.get(minIndex).getDays()){
+                    minIndex = j;}
+                temporary.add(minIndex);
+            }
+        }
+
+        for(int index : temporary){ // printing all animals sorted
+            System.out.println("Name: " + (database.get(index).getName()));
+            System.out.println("Type: " + (database.get(index).getType()));
+            System.out.println("Days In Shelter: " + (database.get(index).getDays()));
+            System.out.println("---------------------------");
         }
     }
 }
