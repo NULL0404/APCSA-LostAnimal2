@@ -79,6 +79,13 @@ public class animalShelter {
         }
     }
 
-    //
+    // modifying animal
+    public void modifyAnimal(String animalData, String modifier, String newData){
+        for(shelterAnimal animal : database){
+            if((animal.getName().equals(animalData))||(animal.getChip() == (animalData))){
+
+            }
+        }
+    }
 
 }

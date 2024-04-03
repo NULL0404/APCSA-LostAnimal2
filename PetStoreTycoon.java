@@ -69,7 +69,13 @@ public class PetStoreTycoon {
         if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
 
         if (command.equals("E")){
-            System.out.println("Name or ")
+            System.out.println("Name or Microchip Data of Animal To Be Changed");
+            String animalModified = input.nextLine();
+            System.out.println("What data would you like to change?");
+            String modifier = input.nextLine();
+            System.out.println("New Data:");
+            String newData = input.nextLine();
+            shelter.modifyAnimal(animalModified, modifier, newData);
         }
 
 

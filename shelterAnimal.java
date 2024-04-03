@@ -66,6 +66,10 @@ public class shelterAnimal {
         return daysIn;
     }
 
+    public int getChip(){
+        return microchip;
+    }
+
     public void print() {
         String output = "";
         System.out.println("Name: " + nameOfAnimal);
