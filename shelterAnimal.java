@@ -9,11 +9,11 @@ public class shelterAnimal {
     private boolean fixed;
     private int daysIn;
     private boolean surrendered;
-    private String microchip;
+    private int microchip;
 
     // All variable constructor
     public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter,
-            boolean isSurrendered, String microchipData) {
+            boolean isSurrendered, int microchipData) {
         nameOfAnimal = name;
         typeOfAnimal = type;
         age = animalAge;
@@ -80,11 +80,11 @@ public class shelterAnimal {
         daysIn = newDays;
     }
 
-    public String getChip() {
+    public int getChip() {
         return microchip;
     }
 
-    public void setChip(String newChip) {
+    public void setChip(int newChip) {
         microchip = newChip;
     }
 

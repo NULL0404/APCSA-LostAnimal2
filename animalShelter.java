@@ -82,7 +82,7 @@ public class animalShelter {
     // modifying animal
     public void modifyAnimal(String animalData, String modifier, String newData){
         for(shelterAnimal animal : database){
-            if((animal.getName().equals(animalData))||(animal.getChip().equals(animalData))){
+            if((animal.getName().equals(animalData))||(animal.getChip() == (Integer.parseInt(animalData)))){
                 if(modifier.equals("Name")){ // if they want to change the name
                     animal.setName(newData);}
 
@@ -102,7 +102,7 @@ public class animalShelter {
                     animal.setDays(Integer.parseInt(newData));}
 
                 if(modifier.equals("Microchip")){ // if they want to change chip data
-                    animal.setChip(newData);}
+                    animal.setChip(Integer.parseInt(newData));}
             }
         }
     }
