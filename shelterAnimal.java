@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class shelterAnimal {
     // instance variables
     private String nameOfAnimal;
-    private String typeOfAnimal;
     private int age;
     private boolean tagged;
     private boolean fixed;
@@ -12,10 +11,9 @@ public class shelterAnimal {
     private int microchip;
 
     // All variable constructor
-    public shelterAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter,
+    public shelterAnimal(String name, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter,
             boolean isSurrendered, int microchipData) {
         nameOfAnimal = name;
-        typeOfAnimal = type;
         age = animalAge;
         tagged = isTagged;
         fixed = isFixed;
@@ -32,20 +30,12 @@ public class shelterAnimal {
         return surrendered;
     }
 
-    public String getMicrochip() {
+    public int getMicrochip() {
         return microchip;
     }
 
     public void setName(String newName) {
         nameOfAnimal = newName;
-    }
-
-    public String getType() {
-        return typeOfAnimal;
-    }
-
-    public void setType(String newType) {
-        typeOfAnimal = newType;
     }
 
     public int getAge() {
@@ -89,9 +79,7 @@ public class shelterAnimal {
     }
 
     public void print() {
-        String output = "";
-        System.out.println("Name: " + nameOfAnimal);
-        System.out.println("Type: " + typeOfAnimal);
+        System.out.println("Name: " + nameOfAnimal);;
         System.out.println("Age: " + age);
         System.out.print("Fixed? ");
         if (fixed) System.out.println("Yes");
@@ -102,6 +90,6 @@ public class shelterAnimal {
     }
 
     public String toString() {
-        return typeOfAnimal + ": \"" + nameOfAnimal + "\"";
+        return "Other" + ": \"" + nameOfAnimal + "\"";
     }
 }

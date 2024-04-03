@@ -43,8 +43,8 @@ public class animalShelter {
     }
 
     // adding the animal
-    public void addAnimal(String name, String type, int animalAge, boolean isTagged, boolean isFixed) {
-        shelterAnimal newAnimal = new shelterAnimal(name, type, animalAge, isTagged, isFixed, animalAge, isFixed, animalAge);
+    public void addAnimal(String name, int animalAge, boolean isTagged, boolean isFixed) {
+        shelterAnimal newAnimal = new shelterAnimal(name, animalAge, isTagged, isFixed, animalAge, isFixed, animalAge);
         database.add(newAnimal);
         totalAnimals++;
         if(type.equals("Dog")) numDogs++;
@@ -87,7 +87,7 @@ public class animalShelter {
                     animal.setName(newData);}
 
                 if(modifier.equals("type")){ // if they want to change the type
-                    animal.setType(newData);}
+                    System.out.println("Please recreate the animal");}
 
                 if(modifier.equals("age")){ // if they want to change the age
                     animal.setAge(Integer.parseInt(newData));}
@@ -121,7 +121,7 @@ public class animalShelter {
 
         for(int index : temporary){ // printing all animals sorted
             System.out.println("Name: " + (database.get(index).getName()));
-            System.out.println("Type: " + (database.get(index).getType()));
+            // System.out.println("Type: " + (database.get(index).getType())); Figure this out with subclass
             System.out.println("Days In Shelter: " + (database.get(index).getDays()));
             System.out.println("---------------------------");
         }
