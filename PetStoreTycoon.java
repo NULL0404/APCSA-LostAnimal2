@@ -72,6 +72,7 @@ public class PetStoreTycoon {
             System.out.println("Name or Microchip Data of Animal To Be Changed");
             String animalModified = input.nextLine();
             System.out.println("What data would you like to change?");
+            System.out.println("[Name][Type][Age][Tag][Fixed][Days In][Microchip]");
             String modifier = input.nextLine();
             System.out.println("New Data:");
             String newData = input.nextLine();

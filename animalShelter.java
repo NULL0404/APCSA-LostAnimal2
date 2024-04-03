@@ -73,7 +73,7 @@ public class animalShelter {
     // printing all adoptable animals
     public void printAdoptables() {
         for (shelterAnimal animal : database) {
-            if (animal.returnDays() >= 14) {
+            if (animal.getDays() >= 14) {
                 System.out.println(animal);
             }
         }
@@ -82,10 +82,28 @@ public class animalShelter {
     // modifying animal
     public void modifyAnimal(String animalData, String modifier, String newData){
         for(shelterAnimal animal : database){
-            if((animal.getName().equals(animalData))||(animal.getChip() == (animalData))){
+            if((animal.getName().equals(animalData))||(animal.getChip().equals(animalData))){
+                if(modifier.equals("Name")){ // if they want to change the name
+                    animal.setName(newData);}
 
+                if(modifier.equals("Type")){ // if they want to change the type
+                    animal.setType(newData);}
+
+                if(modifier.equals("Age")){ // if they want to change the age
+                    animal.setAge(Integer.parseInt(newData));}
+
+                if(modifier.equals("Tag")){ // if they want to change if tagged
+                    animal.setTagged(Boolean.parseBoolean(newData));}
+
+                if(modifier.equals("Fixed")){ // if they want to change if fixed
+                    animal.setFixed(Boolean.parseBoolean(newData));}
+
+                if(modifier.equals("Days In")){ // if they want to change how many days in
+                    animal.setDays(Integer.parseInt(newData));}
+                    
+                if(modifier.equals("Microchip")){ // if they want to change chip data
+                    animal.setChip(newData);}
             }
         }
     }
-
 }
