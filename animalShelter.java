@@ -83,25 +83,25 @@ public class animalShelter {
     public void modifyAnimal(String animalData, String modifier, String newData){
         for(shelterAnimal animal : database){
             if((animal.getName().equals(animalData))||(animal.getChip() == (Integer.parseInt(animalData)))){
-                if(modifier.equals("Name")){ // if they want to change the name
+                if(modifier.equals("name")){ // if they want to change the name
                     animal.setName(newData);}
 
-                if(modifier.equals("Type")){ // if they want to change the type
+                if(modifier.equals("type")){ // if they want to change the type
                     animal.setType(newData);}
 
-                if(modifier.equals("Age")){ // if they want to change the age
+                if(modifier.equals("age")){ // if they want to change the age
                     animal.setAge(Integer.parseInt(newData));}
 
-                if(modifier.equals("Tag")){ // if they want to change if tagged
+                if(modifier.equals("tag")){ // if they want to change if tagged
                     animal.setTagged(Boolean.parseBoolean(newData));}
 
-                if(modifier.equals("Fixed")){ // if they want to change if fixed
+                if(modifier.equals("fixed")){ // if they want to change if fixed
                     animal.setFixed(Boolean.parseBoolean(newData));}
 
-                if(modifier.equals("Days In")){ // if they want to change how many days in
+                if(modifier.equals("days in")){ // if they want to change how many days in
                     animal.setDays(Integer.parseInt(newData));}
 
-                if(modifier.equals("Microchip")){ // if they want to change chip data
+                if(modifier.equals("microchip")){ // if they want to change chip data
                     animal.setChip(Integer.parseInt(newData));}
             }
         }
