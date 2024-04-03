@@ -16,7 +16,7 @@ public class animalShelter {
     // Print all shelter animals that are chipped
     public void printChip() {
         for (shelterAnimal animal : database) {
-            if (animal.isTagged()) {
+            if (animal.getChip() != -1) {
                 System.out.println(animal);
             }
         }
@@ -25,8 +25,8 @@ public class animalShelter {
     // Print all shelter animals of a specific species
     public void printSpecies(String species) {
         for (shelterAnimal animal : database) {
-            if (animal.getType().equals(species)) {
-                System.out.println(animal);
+            if (animal.isDog()) {
+                System.out.println("dog");
             }
         }
     }
@@ -43,12 +43,10 @@ public class animalShelter {
     }
 
     // adding the animal
-    public void addAnimal(String name, int animalAge, boolean isTagged, boolean isFixed) {
-        shelterAnimal newAnimal = new shelterAnimal(name, animalAge, isTagged, isFixed, animalAge, isFixed, animalAge);
+    public void addAnimal(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered) {
+        shelterAnimal newAnimal = new shelterAnimal(name, animalAge, microchip, isFixed, isSurrendered);
         database.add(newAnimal);
         totalAnimals++;
-        if(type.equals("Dog")) numDogs++;
-        else numCats++;
     }
 
     public int getTotal() {
@@ -90,10 +88,7 @@ public class animalShelter {
                     System.out.println("Please recreate the animal");}
 
                 if(modifier.equals("age")){ // if they want to change the age
-                    animal.setAge(Integer.parseInt(newData));}
-
-                if(modifier.equals("tag")){ // if they want to change if tagged
-                    animal.setTagged(Boolean.parseBoolean(newData));}
+                    animal.setAge(Integer.parseInt(newData));};
 
                 if(modifier.equals("fixed")){ // if they want to change if fixed
                     animal.setFixed(Boolean.parseBoolean(newData));}

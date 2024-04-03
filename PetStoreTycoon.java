@@ -18,11 +18,16 @@ final static String BG_BLACK  = "\u001B[100m";
 public class PetStoreTycoon {
     // Set up user input program wide
     static Scanner input = new Scanner(System.in);
+
+    // Create a shelter database
+    static animalShelter shelter = new animalShelter();
     
     public static void main(String[] args) { 
+        // Notice
+        System.out.println("Note: Menu items with letters should be typed in lowercase");
 
-        // Create a shelter database
-        animalShelter shelter = new animalShelter();
+        // Populate the shelter with default animals
+        PopulateArray();
 
         while (true) { // Main menu loop
 
@@ -45,18 +50,18 @@ public class PetStoreTycoon {
             System.out.print("Enter a command > " + CYAN); // User input in cyan
             String command = input.nextLine();
             System.out.print(RESET); // Clear cyan color
-            menuInterpretor(command, shelter);
+            menuInterpretor(command);
 
         }
     }
 
     // Runs the correct methods based on the command from the user
-    public static void menuInterpretor (String command, animalShelter shelter) {
+    public static void menuInterpretor (String command) {
 
         // menu workings
         if (command.equals("1")) shelter.printAllAnimals(); // menu for printing all animals
 
-        if (command.equals("2")) shelter.printChip(); // menu for printing animals with chips
+        else if (command.equals("2")) shelter.printChip(); // menu for printing animals with chips
 
         else if (command.equals("3")) {
             // Ask the user for the species and run the printLostOfSpecies function on that input
@@ -66,9 +71,11 @@ public class PetStoreTycoon {
             shelter.printSpecies(species);
         }
 
-        if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
+        else if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
 
-        if (command.equals("E")){
+        else if (command.equals("d")) addAnimal();
+
+        else if (command.equals("e")){
             System.out.println("Name or Microchip Data of Animal To Be Changed");
             String animalModified = input.nextLine();
             System.out.println("What data would you like to change?");
@@ -83,7 +90,7 @@ public class PetStoreTycoon {
         else System.out.println(RED + "Command not found" + RESET);
     }
 
-    public void PopulateArray (animalShelter shelter) {
+    public static void PopulateArray () {
         shelter.addAnimal("Scout", "Dog", 12, true, true);
         shelter.addAnimal("Mateo", "Cat", 4, true, true);
         shelter.addAnimal("Maxwell", "Cat", 13, true, false);
@@ -108,5 +115,44 @@ public class PetStoreTycoon {
         shelter.addAnimal("Bryan", "Cat", 43, true, true);
         shelter.addAnimal("Robin", "Dog", 3, true, true);
         
+    }
+    public static void addAnimal() {
+        System.out.println("Add animal ----------------");
+        System.out.println("There are " + shelter.getTotal());
+        System.out.print("What type of animal? > " + CYAN);
+        System.out.println(BLUE + "[1]" + RESET + " Cat");
+        System.out.println(RED + "[2]" + RESET + " Dog");
+        System.out.println(GREEN + "[3]" + RESET + " Other");
+        int typeInt = input.nextInt();
+        if (typeInt == 3) {
+            System.out.print("What's its name? > " + CYAN);
+            String name = input.nextLine();
+
+            System.out.print("How old is it? > " + CYAN);
+            int age = input.nextInt();
+
+            System.out.print("Enter a microchip if available > " + CYAN);
+            int chip = input.nextInt();
+
+            boolean fixed;
+            System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) {
+                fixed = true;
+            } else {
+                fixed = false;
+            }
+
+            boolean surrendered;
+            System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) {
+                surrendered = true;
+            } else {
+                surrendered = false;
+            }
+
+            System.out.println(RESET + "Adding the animal to the database...");
+            shelter.addAnimal(name,age,chip,fixed,surrendered);
+            
+        }
     }
 }

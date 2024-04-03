@@ -4,20 +4,17 @@ public class shelterAnimal {
     // instance variables
     private String nameOfAnimal;
     private int age;
-    private boolean tagged;
     private boolean fixed;
     private int daysIn;
     private boolean surrendered;
     private int microchip;
 
     // All variable constructor
-    public shelterAnimal(String name, int animalAge, boolean isTagged, boolean isFixed, int daysInShelter,
-            boolean isSurrendered, int microchipData) {
+    public shelterAnimal(String name, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered) {
         nameOfAnimal = name;
         age = animalAge;
-        tagged = isTagged;
         fixed = isFixed;
-        daysIn = daysInShelter;
+        daysIn = 0;
         surrendered = isSurrendered;
         microchip = microchipData;
     }
@@ -44,14 +41,6 @@ public class shelterAnimal {
 
     public void setAge(int newAge) {
         age = newAge;
-    }
-
-    public boolean isTagged() {
-        return tagged;
-    }
-
-    public void setTagged(boolean newTagged) {
-        tagged = newTagged;
     }
 
     public boolean isFixed() {
@@ -85,7 +74,7 @@ public class shelterAnimal {
         if (fixed) System.out.println("Yes");
         else System.out.println("No");
         System.out.print("Tagged? ");
-        if (tagged) System.out.println("Yes");
+        if (microchip != -1) System.out.println("Yes");
         else System.out.println("No");
     }
 
