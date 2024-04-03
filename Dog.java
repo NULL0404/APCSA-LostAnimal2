@@ -4,8 +4,3 @@ public class Dog extends shelterAnimal{
         dog = true;}
 }
 
-public class Cat extends shelterAnimal{
-    private boolean cat;
-    public void isCat(){
-        cat = true;}
-}
