@@ -24,9 +24,22 @@ public class animalShelter {
 
     // Print all shelter animals of a specific species
     public void printSpecies(String species) {
-        for (shelterAnimal animal : database) {
-            if (animal.isDog()) {
-                System.out.println("dog");
+        if (species.equals("dog")) {
+            for (shelterAnimal animal : database) {
+                if (!(animal instanceof Dog)) continue; // If the animal is not a dog, skip this
+                System.out.println(animal);
+            }
+        }
+        else if (species.equals("cat")) {
+            for (shelterAnimal animal : database) {
+                if (!(animal instanceof Cat)) continue; // If the animal is not a cat, skip this
+                System.out.println(animal);
+            }
+        }
+        else { // Print all other animals
+            for (shelterAnimal animal : database) {
+                if ((animal instanceof Cat) || (animal instanceof Dog)) continue; // If the animal is a dog or cat, skip this
+                System.out.println(animal);
             }
         }
     }
@@ -88,7 +101,7 @@ public class animalShelter {
                     System.out.println("Please recreate the animal");}
 
                 if(modifier.equals("age")){ // if they want to change the age
-                    animal.setAge(Integer.parseInt(newData));};
+                    animal.setAge(Integer.parseInt(newData));}
 
                 if(modifier.equals("fixed")){ // if they want to change if fixed
                     animal.setFixed(Boolean.parseBoolean(newData));}
