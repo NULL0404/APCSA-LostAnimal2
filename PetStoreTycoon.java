@@ -91,29 +91,29 @@ public class PetStoreTycoon {
     }
 
     public static void PopulateArray () {
-        shelter.addAnimal("Scout", "Dog", 12, true, true);
-        shelter.addAnimal("Mateo", "Cat", 4, true, true);
-        shelter.addAnimal("Maxwell", "Cat", 13, true, false);
-        shelter.addAnimal("Eric", "Naked Mole Rat", 16, false, true);
-        shelter.addAnimal("Ethan", "Hippo", 16, false, false);
+        shelter.addAnimal("Scout", 12, 780701625, true, true);
+        shelter.addAnimal("Mateo", 4, 831462500, true, true);
+        shelter.addAnimal("Maxwell", 13, 586892107, true, false);
+        shelter.addAnimal("Eric", 16, 806542905, false, true);
+        shelter.addAnimal("Ethan", 16, 604164455, false, false);
         
-        shelter.addAnimal("Joshua", "Burro", 16, true, true);
-        shelter.addAnimal("Joseph Robinette Biden Jr.", "Cat", 900, true, false);
-        shelter.addAnimal("Tonald Dohn Jrump", "Cat", 77, false, false);
-        shelter.addAnimal("Jordan Belfort", "Cat", 4, false, true);
-        shelter.addAnimal("Tangerine", "Dog", 8, true, true);
+        shelter.addAnimal("Joshua", 16, 950646549, true, true);
+        shelter.addAnimal("Joseph Robinette Biden Jr.", 900, 115959804, true, false);
+        shelter.addAnimal("Tonald Dohn Jrump", 77, 363881057, false, false);
+        shelter.addAnimal("Jordan Belfort", 4, 999127588, false, true);
+        shelter.addAnimal("Tangerine", 8, 557742143, true, true);
         
-        shelter.addAnimal("Meatball", "Dog", 2, false, true);
-        shelter.addAnimal("Jack", "Dog", 3, false, true);
-        shelter.addAnimal("Keivan", "Parapithecidae", 17, true, false);
-        shelter.addAnimal("Gribber", "Cat", 16, true, true);
-        shelter.addAnimal("Justin", "Pool-Playing Shark", 17, true, false);
+        shelter.addAnimal("Meatball", 2, 458513048, false, true);
+        shelter.addAnimal("Jack", 3, 180869070, false, true);
+        shelter.addAnimal("Keivan", 17, 332915636, true, false);
+        shelter.addAnimal("Gribber", 16, 379827576, true, true);
+        shelter.addAnimal("Justin", 17, 613340565, true, false);
 
-        shelter.addAnimal("Waltuh", "Cat", 66, false, true);
-        shelter.addAnimal("Gambit", "Cat", 4, true, true);
-        shelter.addAnimal("Rocket", "Cat", 6, true, true);
-        shelter.addAnimal("Bryan", "Cat", 43, true, true);
-        shelter.addAnimal("Robin", "Dog", 3, true, true);
+        shelter.addAnimal("Waltuh", 66, 189156965, false, true);
+        shelter.addAnimal("Gambit", 4, 425378256, true, true);
+        shelter.addAnimal("Rocket", 6, 934488781, true, true);
+        shelter.addAnimal("Bryan", 43, 778949110, true, true);
+        shelter.addAnimal("Robin", 3, 518650274, true, true);
         
     }
     public static void addAnimal() {
