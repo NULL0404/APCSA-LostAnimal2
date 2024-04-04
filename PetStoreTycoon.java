@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 // Color Variables
 // These can be added to print statements to change the colors of the console
-final static String RESET = "\u001B[0m";
-final static String BLACK = "\u001B[30m";
-final static String GRAY = "\u001B[90m";
-final static String RED = "\u001B[31m";
-final static String CYAN = "\u001B[36m";
-final static String BLUE = "\u001B[34m";
-final static String GREEN = "\u001B[32m";
-final static String YELLOW = "\u001B[33m";
-final static String BG_BLACK  = "\u001B[100m";
+private final static String RESET = "\u001B[0m";
+private final static String BLACK = "\u001B[30m";
+private final static String GRAY = "\u001B[90m";
+private final static String RED = "\u001B[31m";
+private final static String CYAN = "\u001B[36m";
+private final static String BLUE = "\u001B[34m";
+private final static String GREEN = "\u001B[32m";
+private final static String YELLOW = "\u001B[33m";
+private final static String BG_BLACK  = "\u001B[100m";
 
 public static class PetStoreTycoon {
     // Set up user input program wide
@@ -125,6 +125,65 @@ public static class PetStoreTycoon {
         System.out.println(RED + "[2]" + RESET + " Dog");
         System.out.println(GREEN + "[3]" + RESET + " Other");
         int typeInt = input.nextInt();
+        if (typeInt == 1) {
+            System.out.print("What's its name? > " + CYAN);
+            String name = input.nextLine();
+
+            System.out.print("How old is it? > " + CYAN);
+            int age = input.nextInt();
+
+            System.out.print("Enter a microchip if available > " + CYAN);
+            int chip = input.nextInt();
+
+            boolean fixed;
+            System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) {
+                fixed = true;
+            } else {
+                fixed = false;
+            }
+
+            boolean surrendered;
+            System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) {
+                surrendered = true;
+            } else {
+                surrendered = false;
+            }
+
+            System.out.println(RESET + "Adding the cat to the database...");
+            shelter.addCat(name,age,chip,fixed,surrendered);
+            
+        }
+        if (typeInt == 2) {
+            System.out.print("What's its name? > " + CYAN);
+            String name = input.nextLine();
+
+            System.out.print("How old is it? > " + CYAN);
+            int age = input.nextInt();
+
+            System.out.print("Enter a microchip if available > " + CYAN);
+            int chip = input.nextInt();
+
+            boolean fixed;
+            System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) {
+                fixed = true;
+            } else {
+                fixed = false;
+            }
+
+            boolean surrendered;
+            System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) {
+                surrendered = true;
+            } else {
+                surrendered = false;
+            }
+
+            System.out.println(RESET + "Adding the dog to the database...");
+            shelter.addDog(name,age,chip,fixed,surrendered);
+        }
         if (typeInt == 3) {
             System.out.print("What's its name? > " + CYAN);
             String name = input.nextLine();
