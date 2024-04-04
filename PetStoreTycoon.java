@@ -15,7 +15,7 @@ final static String GREEN = "\u001B[32m";
 final static String YELLOW = "\u001B[33m";
 final static String BG_BLACK  = "\u001B[100m";
 
-public class PetStoreTycoon {
+public static class PetStoreTycoon {
     // Set up user input program wide
     static Scanner input = new Scanner(System.in);
 
@@ -90,7 +90,7 @@ public class PetStoreTycoon {
         else System.out.println(RED + "Command not found" + RESET);
     }
 
-    public static void PopulateArray () {
+    public static void PopulateArray() {
         shelter.addAnimal("Scout", 12, 780701625, true, true);
         shelter.addAnimal("Mateo", 4, 831462500, true, true);
         shelter.addAnimal("Maxwell", 13, 586892107, true, false);
