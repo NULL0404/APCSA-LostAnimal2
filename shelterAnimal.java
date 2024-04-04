@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+// Zachary Bomke, Ethan Abbate, Eric Dominguez
+// Superclass for a shelter animal, can be used to create an "other" animal and
+// includes shared methods and variables for all pet types
 
 public class shelterAnimal {
     // instance variables
