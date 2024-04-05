@@ -3,8 +3,8 @@ public class Dog extends shelterAnimal{
     private String color;
     private boolean friendly;
 
-    public Dog(String name, int age, int totalAnimals, int numDogs, int numCats, String breed, String color, boolean friendly) {
-    super(name, age, totalAnimals, numDogs, numCats); 
+    public Dog(String name, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered, String breed, String color, boolean friendly) {
+    super(name, animalAge, microchipData, isFixed, isSurrendered); 
     this.breed = breed;
     this.color = color;
     this.friendly = friendly;
