@@ -3,8 +3,8 @@ public class Cat extends shelterAnimal{
     private String type;
     private boolean outdoor;
 
-    public Cat(String name, int age, String eyeColor, String type, boolean outdoor) {
-    super(name, age); 
+    public Cat(String name, int age, int totalAnimals, int numDogs, int numCats, String eyeColor, String type, boolean outdoor) {
+    super(name, age, totalAnimals, numDogs, numCats); 
     this.eyeColor = eyeColor;
     this.type = type;
     this.outdoor = outdoor;
