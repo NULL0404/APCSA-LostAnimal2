@@ -46,21 +46,18 @@ public class animalShelter {
     }
 
     // print all shelter animals that aren't fixed
-    public void printNonFixed(boolean isFixed) {
-        for (shelterAnimal animal : database) {
-            if (animal.isFixed()) {
-
-            } else {
-                System.out.println(animal);
-            }
+    public void printNonFixed() {
+        for (int i = 0; i < database.size(); i++) {
+            if (database.get(i).isFixed()) continue; // If the animal is fixed, skip it
+            System.out.println(" | " + i + ": " + database.get(i));
         }
     }
 
     // printing all adoptable animals
     public void printAdoptables() {
-        for (shelterAnimal animal : database) {
-            if (animal.isAdoptable()) {
-                System.out.println(animal);
+        for (int i = 0; i < database.size(); i++) {
+            if (database.get(i).isAdoptable()) {
+                System.out.println(" | " + i + ": " + database.get(i));
             }
         }
     }
