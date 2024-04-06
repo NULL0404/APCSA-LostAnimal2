@@ -73,9 +73,9 @@ public class PetStoreTycoon {
 
         else if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
 
-        else if (command.equals("d")) addAnimal();
+        else if (command.equals("d")) addAnimal(); // Move to the addAnimal function
 
-        else if (command.equals("e")){
+        else if (command.equals("e")) {
             System.out.println("Name or Microchip Data of Animal To Be Changed");
             String animalModified = input.nextLine();
             System.out.println("What data would you like to change?");
@@ -86,35 +86,34 @@ public class PetStoreTycoon {
             shelter.modifyAnimal(animalModified, modifier, newData);
         }
 
-
         else System.out.println(RED + "Command not found" + RESET);
     }
 
     public static void PopulateArray() {
         // 5 dogs, 10 cats, 5 other
-        shelter.addDog("Scout", 12, 780701625, true, true);
-        shelter.addCat("Mateo", 4, 831462500, true, true);
-        shelter.addCat("Maxwell", 13, 586892107, true, false);
-        shelter.addCat("Eric", 16, 806542905, false, true);
-        shelter.addCat("Ethan", 16, 604164455, false, false);
+        shelter.addDog("Scout", 12, 780701625, true, true, "Mutt", "black and white", false);
+        shelter.addCat("Mateo", 4, 831462500, true, true, "green", "Tabby", false);
+        shelter.addCat("Maxwell", 13, 586892107, true, false, "green", "tuxedo", true);
+        shelter.addCat("Eric", 16, 806542905, false, true, "blue", "white", true);
+        shelter.addCat("Ethan", 16, 604164455, false, false, "blue", "black", true);
         
-        shelter.addCat("Joshua", 16, 950646549, true, true);
-        shelter.addCat("Joseph Robinette Biden Jr.", 900, 115959804, true, false);
+        shelter.addCat("Joshua", 16, 950646549, true, true, "hazel", "Tabby", true);
+        shelter.addCat("Joseph Robinette Biden Jr.", 900, 115959804, true, false, "hazel", "black", false);
         shelter.addAnimal("Tonald Dohn Jrump", 77, 363881057, false, false);
         shelter.addAnimal("Jordan Belfort", 4, 999127588, false, true);
-        shelter.addDog("Tangerine", 8, 557742143, true, true);
+        shelter.addDog("Tangerine", 8, 557742143, true, true, "australian sheperd", "brown", true);
         
-        shelter.addDog("Meatball", 2, 458513048, false, true);
-        shelter.addDog("Jack", 3, 180869070, false, true);
-        shelter.addCat("Keivan", 17, 332915636, true, false);
-        shelter.addCat("Gribber", 16, 379827576, true, true);
+        shelter.addDog("Meatball", 2, 458513048, false, true, "pug", "brown", true);
+        shelter.addDog("Jack", 3, 180869070, false, true, "lab", "brown", true);
+        shelter.addCat("Keivan", 17, 332915636, true, false, "green", "black", true);
+        shelter.addCat("Gribber", 16, 379827576, true, true, "blue", "tuxedo", false);
         shelter.addAnimal("Justin", 17, 613340565, true, false);
 
         shelter.addAnimal("Waltuh", 66, 189156965, false, true);
-        shelter.addCat("Gambit", 4, 425378256, true, true);
-        shelter.addCat("Rocket", 6, 934488781, true, true);
+        shelter.addCat("Gambit", 4, 425378256, true, true, null, null, false);
+        shelter.addCat("Rocket", 6, 934488781, true, true, null, null, false);
         shelter.addAnimal("Bryan", 43, 778949110, true, true);
-        shelter.addDog("Robin", 3, 518650274, true, true);
+        shelter.addDog("Robin", 3, 518650274, true, true, null, "brown", true);
         
     }
     public static void addAnimal() {
@@ -136,23 +135,28 @@ public class PetStoreTycoon {
             int chip = input.nextInt();
 
             boolean fixed;
-            System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
-            if (input.nextLine().equals("y")) {
-                fixed = true;
-            } else {
-                fixed = false;
-            }
+            System.out.print("Is the cat fixed? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) fixed = true;
+            else fixed = false;
 
             boolean surrendered;
-            System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
-            if (input.nextLine().equals("y")) {
-                surrendered = true;
-            } else {
-                surrendered = false;
-            }
+            System.out.print("Was the cat surrendered? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) surrendered = true; 
+            else surrendered = false;
+
+            System.out.print("Enter the eye color > " + CYAN);
+            String eyeColor = input.nextLine();
+
+            System.out.print("Enter the type > " + CYAN);
+            String type = input.nextLine();
+
+            boolean outdoor;
+            System.out.print("Was the cat an outdoor cat? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) outdoor = true;
+            else outdoor = false;
 
             System.out.println(RESET + "Adding the cat to the database...");
-            shelter.addCat(name,age,chip,fixed,surrendered);
+            shelter.addCat(name,age,chip,fixed,surrendered,eyeColor,type,outdoor);
             
         }
         if (typeInt == 2) {
@@ -166,23 +170,28 @@ public class PetStoreTycoon {
             int chip = input.nextInt();
 
             boolean fixed;
-            System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
-            if (input.nextLine().equals("y")) {
-                fixed = true;
-            } else {
-                fixed = false;
-            }
+            System.out.print("Is the dog fixed? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) fixed = true;
+            else fixed = false;
 
             boolean surrendered;
-            System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
-            if (input.nextLine().equals("y")) {
-                surrendered = true;
-            } else {
-                surrendered = false;
-            }
+            System.out.print("Was the dog surrendered? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) surrendered = true; 
+            else surrendered = false;
+
+            System.out.print("Enter the breed > " + CYAN);
+            String breed = input.nextLine();
+
+            System.out.print("Enter the color > " + CYAN);
+            String color = input.nextLine();
+
+            boolean friendly;
+            System.out.print("Is the dog friendly? (Y, N) > " + CYAN);
+            if (input.nextLine().equals("y")) friendly = true;
+            else friendly = false;
 
             System.out.println(RESET + "Adding the dog to the database...");
-            shelter.addDog(name,age,chip,fixed,surrendered);
+            shelter.addDog(name,age,chip,fixed,surrendered,breed,color,friendly);
         }
         if (typeInt == 3) {
             System.out.print("What's its name? > " + CYAN);
@@ -196,19 +205,13 @@ public class PetStoreTycoon {
 
             boolean fixed;
             System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
-            if (input.nextLine().equals("y")) {
-                fixed = true;
-            } else {
-                fixed = false;
-            }
+            if (input.nextLine().equals("y")) fixed = true;
+            else fixed = false;
 
             boolean surrendered;
             System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
-            if (input.nextLine().equals("y")) {
-                surrendered = true;
-            } else {
-                surrendered = false;
-            }
+            if (input.nextLine().equals("y")) surrendered = true; 
+            else surrendered = false;
 
             System.out.println(RESET + "Adding the animal to the database...");
             shelter.addAnimal(name,age,chip,fixed,surrendered);
