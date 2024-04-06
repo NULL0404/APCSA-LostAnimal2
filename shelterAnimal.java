@@ -12,11 +12,11 @@ public class shelterAnimal {
     private int microchip;
 
     // All variable constructor
-    public shelterAnimal(String name, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered) {
+    public shelterAnimal(String name, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered, int time) {
         nameOfAnimal = name;
         age = animalAge;
         fixed = isFixed;
-        daysIn = 0;
+        daysIn = time;
         surrendered = isSurrendered;
         microchip = microchipData;
     }

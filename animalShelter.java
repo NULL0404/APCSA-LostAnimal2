@@ -63,23 +63,23 @@ public class animalShelter {
     }
 
     // Function to create an other animal
-    public void addAnimal(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered) {
-        shelterAnimal newAnimal = new shelterAnimal(name, animalAge, microchip, isFixed, isSurrendered);
+    public void addAnimal(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, int time) {
+        shelterAnimal newAnimal = new shelterAnimal(name, animalAge, microchip, isFixed, isSurrendered, time);
         database.add(newAnimal);
         totalAnimals++;
     }
 
     // Function to create a cat
-    public void addCat(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String eyeColor, String type, boolean outdoor) {
-        Cat newCat = new Cat(name, animalAge, microchip, isFixed, isSurrendered, eyeColor, type, outdoor);
+    public void addCat(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String eyeColor, String type, boolean outdoor, int time) {
+        Cat newCat = new Cat(name, animalAge, microchip, isFixed, isSurrendered, eyeColor, type, outdoor, time);
         database.add(newCat);
         totalAnimals++;
         numCats++;
     }
     
     // Function to create an other animal
-    public void addDog(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String breed, String color, boolean friendly) {
-        Dog newDog = new Dog(name, animalAge, microchip, isFixed, isSurrendered, breed, color, friendly);
+    public void addDog(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String breed, String color, boolean friendly, int time) {
+        Dog newDog = new Dog(name, animalAge, microchip, isFixed, isSurrendered, breed, color, friendly, time);
         database.add(newDog);
         totalAnimals++;
         numDogs++;

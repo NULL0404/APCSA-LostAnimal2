@@ -4,8 +4,8 @@ public class Cat extends shelterAnimal {
     private boolean outdoor;
 
     public Cat(String nameOfAnimal, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered,
-            String eyeColor, String type, boolean outdoor) {
-        super(nameOfAnimal, animalAge, microchipData, isFixed, isSurrendered);
+            String eyeColor, String type, boolean outdoor, int time) {
+        super(nameOfAnimal, animalAge, microchipData, isFixed, isSurrendered, time);
         this.eyeColor = eyeColor;
         this.type = type;
         this.outdoor = outdoor;

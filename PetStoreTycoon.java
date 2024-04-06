@@ -101,29 +101,29 @@ public class PetStoreTycoon {
 
     public static void PopulateArray() {
         // 5 dogs, 10 cats, 5 other
-        shelter.addDog("Scout", 12, 780701625, true, true, "Mutt", "black and white", false);
-        shelter.addCat("Mateo", 4, 831462500, true, true, "green", "Tabby", false);
-        shelter.addCat("Maxwell", 13, 586892107, true, false, "green", "tuxedo", true);
-        shelter.addCat("Eric", 16, 806542905, false, true, "blue", "white", true);
-        shelter.addCat("Ethan", 16, 604164455, false, false, "blue", "black", true);
+        shelter.addDog("Scout", 12, 780701625, true, true, "Mutt", "black and white", false, 5);
+        shelter.addCat("Mateo", 4, 831462500, true, true, "green", "Tabby", false, 7);
+        shelter.addCat("Maxwell", 13, 586892107, true, false, "green", "tuxedo", true, 8);
+        shelter.addCat("Eric", 16, 806542905, false, true, "blue", "white", true, 2);
+        shelter.addCat("Ethan", 16, 604164455, false, false, "blue", "black", true, 20);
         
-        shelter.addCat("Joshua", 16, 950646549, true, true, "hazel", "Tabby", true);
-        shelter.addCat("Joseph Robinette Biden Jr.", 900, 115959804, true, false, "hazel", "black", false);
-        shelter.addAnimal("Tonald Dohn Jrump", 77, 363881057, false, false);
-        shelter.addAnimal("Jordan Belfort", 4, 999127588, false, true);
-        shelter.addDog("Tangerine", 8, 557742143, true, true, "australian sheperd", "brown", true);
+        shelter.addCat("Joshua", 16, 950646549, true, true, "hazel", "Tabby", true, 15);
+        shelter.addCat("Joseph Robinette Biden Jr.", 900, 115959804, true, false, "hazel", "black", false, 72);
+        shelter.addAnimal("Tonald Dohn Jrump", 77, 363881057, false, false, 19);
+        shelter.addAnimal("Jordan Belfort", 4, 999127588, false, true, 5);
+        shelter.addDog("Tangerine", 8, 557742143, true, true, "australian sheperd", "brown", true, 0);
         
-        shelter.addDog("Meatball", 2, 458513048, false, true, "pug", "brown", true);
-        shelter.addDog("Jack", 3, 180869070, false, true, "lab", "brown", true);
-        shelter.addCat("Keivan", 17, 332915636, true, false, "green", "black", true);
-        shelter.addCat("Gribber", 16, 379827576, true, true, "blue", "tuxedo", false);
-        shelter.addAnimal("Justin", 17, 613340565, true, false);
+        shelter.addDog("Meatball", 2, 458513048, false, true, "pug", "brown", true, -1);
+        shelter.addDog("Jack", 3, 180869070, false, true, "lab", "brown", true, 4);
+        shelter.addCat("Keivan", 17, 332915636, true, false, "green", "black", true, 19);
+        shelter.addCat("Gribber", 16, 379827576, true, true, "blue", "tuxedo", false, 3);
+        shelter.addAnimal("Justin", 17, 613340565, true, false, 0);
 
-        shelter.addAnimal("Waltuh", 66, 189156965, false, true);
-        shelter.addCat("Gambit", 4, 425378256, true, true, null, null, false);
-        shelter.addCat("Rocket", 6, 934488781, true, true, null, null, false);
-        shelter.addAnimal("Bryan", 43, 778949110, true, true);
-        shelter.addDog("Robin", 3, 518650274, true, true, null, "brown", true);
+        shelter.addAnimal("Waltuh", 66, 189156965, false, true, 232);
+        shelter.addCat("Gambit", 4, 425378256, true, true, null, null, false, -1);
+        shelter.addCat("Rocket", 6, 934488781, true, true, null, null, false, 1);
+        shelter.addAnimal("Bryan", 43, 778949110, true, true, 999);
+        shelter.addDog("Robin", 3, 518650274, true, true, null, "brown", true, 8);
         
     }
     public static void addAnimal() {
@@ -144,6 +144,9 @@ public class PetStoreTycoon {
 
             System.out.print(RESET + "How old is it? > " + CYAN);
             int age = input.nextInt(); input.nextLine();
+
+            System.out.print(RESET + "How long has it been in the shelter? > " + CYAN);
+            int time = input.nextInt(); input.nextLine();
 
             System.out.print(RESET + "Enter a microchip if available or -1 if it is not > " + CYAN);
             int chip = input.nextInt(); input.nextLine();
@@ -170,7 +173,7 @@ public class PetStoreTycoon {
             else outdoor = false;
 
             System.out.println(RESET + "Adding the cat to the database...");
-            shelter.addCat(name,age,chip,fixed,surrendered,eyeColor,type,outdoor);
+            shelter.addCat(name,age,chip,fixed,surrendered,eyeColor,type,outdoor, time);
             
         }
         if (typeInt == 2) {
@@ -179,6 +182,9 @@ public class PetStoreTycoon {
 
             System.out.print(RESET + "How old is it? > " + CYAN);
             int age = input.nextInt(); input.nextLine();
+
+            System.out.print(RESET + "How long has it been in the shelter? > " + CYAN);
+            int time = input.nextInt(); input.nextLine();
 
             System.out.print(RESET + "Enter a microchip if available > " + CYAN);
             int chip = input.nextInt(); input.nextLine();
@@ -205,7 +211,7 @@ public class PetStoreTycoon {
             else friendly = false;
 
             System.out.println(RESET + "Adding the dog to the database...");
-            shelter.addDog(name,age,chip,fixed,surrendered,breed,color,friendly);
+            shelter.addDog(name,age,chip,fixed,surrendered,breed,color,friendly, time);
         }
         if (typeInt == 3) {
             System.out.print(RESET + "What's its name? > " + CYAN);
@@ -213,6 +219,9 @@ public class PetStoreTycoon {
 
             System.out.print(RESET + "How old is it? > " + CYAN);
             int age = input.nextInt(); input.nextLine();
+
+            System.out.print(RESET + "How long has it been in the shelter? > " + CYAN);
+            int time = input.nextInt(); input.nextLine();
 
             System.out.print(RESET + "Enter a microchip if available > " + CYAN);
             int chip = input.nextInt(); input.nextLine();
@@ -228,7 +237,7 @@ public class PetStoreTycoon {
             else surrendered = false;
 
             System.out.println(RESET + "Adding the animal to the database...");
-            shelter.addAnimal(name,age,chip,fixed,surrendered);
+            shelter.addAnimal(name,age,chip,fixed,surrendered, time);
             
         }
     }
