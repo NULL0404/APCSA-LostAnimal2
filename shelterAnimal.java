@@ -69,6 +69,10 @@ public class shelterAnimal {
         microchip = newChip;
     }
 
+    public boolean isAdoptable() {
+        return (daysIn > 14) || (surrendered);
+    }
+
     public void print() {
         System.out.println("Name: " + nameOfAnimal);;
         System.out.println("Age: " + age);

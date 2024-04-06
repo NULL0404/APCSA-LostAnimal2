@@ -56,6 +56,15 @@ public class animalShelter {
         }
     }
 
+    // printing all adoptable animals
+    public void printAdoptables() {
+        for (shelterAnimal animal : database) {
+            if (animal.isAdoptable()) {
+                System.out.println(animal);
+            }
+        }
+    }
+
     // Function to create an other animal
     public void addAnimal(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered) {
         shelterAnimal newAnimal = new shelterAnimal(name, animalAge, microchip, isFixed, isSurrendered);
@@ -100,15 +109,6 @@ public class animalShelter {
 
     public void removeAnimal(int id) {
         database.remove(id);
-    }
-
-    // printing all adoptable animals
-    public void printAdoptables() {
-        for (shelterAnimal animal : database) {
-            if (animal.getDays() >= 14) {
-                System.out.println(animal);
-            }
-        }
     }
 
     // modifying animal
