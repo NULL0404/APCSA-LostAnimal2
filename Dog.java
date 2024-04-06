@@ -34,4 +34,8 @@ public class Dog extends shelterAnimal {
     public void setBreed (String newBreed) {
         breed = newBreed;
     }
+
+       Public String toString(){
+        return this.getName() + " is a " + this.color + " " + this.breed;
+    }
 }
