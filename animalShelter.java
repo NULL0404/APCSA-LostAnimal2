@@ -99,12 +99,18 @@ public class animalShelter {
     public void removeAnimal(String name) {
         for (shelterAnimal animal : database) {
             if (animal.getName() == name) {
+                totalAnimals--;
+                if (animal instanceof Cat) numCats--;
+                else if (animal instanceof Dog) numDogs--;
                 database.remove(animal);
             }
         }
     }
 
     public void removeAnimal(int id) {
+        totalAnimals--;
+            if (database.get(i) instanceof Cat) numCats--;
+            else if (database.get(i) instanceof Dog) numDogs--;
         database.remove(id);
     }
 
