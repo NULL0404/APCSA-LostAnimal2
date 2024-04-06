@@ -9,7 +9,7 @@ public class animalShelter {
     // Print all animals in the shelter
     public void printAllAnimals() {
         for (int i = 0; i < database.size(); i++) {
-            System.out.println(i + " " + database.get(i));
+            System.out.println(" | " + i + ": " + database.get(i));
         }
     }
 
@@ -17,7 +17,7 @@ public class animalShelter {
     public void printChip() {
         for (int i = 0; i < database.size(); i++) {
             if (database.get(i).getChip() != -1) {
-                System.out.println(i + " " + database.get(i));
+                System.out.println(" | " + i + ": " + database.get(i));
             }
         }
     }
@@ -27,20 +27,20 @@ public class animalShelter {
         if (species.equals("dog")) {
             for (int i = 0; i < database.size(); i++) {
                 if (!(database.get(i) instanceof Dog)) continue; // If the animal is not a dog, skip this
-                System.out.println(i + " " + database.get(i));
+                System.out.println(" | " + i + ": " + database.get(i));
                 
             }
         }
         else if (species.equals("cat")) {
             for (int i = 0; i < database.size(); i++) {
                 if (!(database.get(i) instanceof Cat)) continue; // If the animal is not a cat, skip this
-                System.out.println(i + " " + database.get(i));
+                System.out.println(" | " + i + ": " + database.get(i));
             }
         }
         else { // Print all other animals
             for (int i = 0; i < database.size(); i++) {
                 if (!(database.get(i) instanceof Dog)) continue; // If the animal is a dog or cat, skip this
-                System.out.println(i + " " + database.get(i));
+                System.out.println(" | " + i + ": " + database.get(i));
             }
         }
     }
@@ -96,6 +96,10 @@ public class animalShelter {
                 database.remove(animal);
             }
         }
+    }
+
+    public void removeAnimal(int id) {
+        database.remove(id);
     }
 
     // printing all adoptable animals

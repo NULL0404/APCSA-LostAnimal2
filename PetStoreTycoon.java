@@ -73,6 +73,14 @@ public class PetStoreTycoon {
 
         else if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
 
+        else if (command.equals("c")) {
+            shelter.printAllAnimals();
+            System.out.print("Enter the # corresponding to the animal you would like to remove, or -1 to cancel > " + CYAN);
+            int remove = input.nextInt(); input.nextLine();
+            if (remove == -1) return;
+            shelter.removeAnimal(remove);
+        }
+
         else if (command.equals("d")) addAnimal(); // Move to the addAnimal function
 
         else if (command.equals("e")) {
