@@ -3,19 +3,19 @@
 
 import java.util.Scanner;
 
-// Color Variables
-// These can be added to print statements to change the colors of the console
-private final static String RESET = "\u001B[0m";
-private final static String BLACK = "\u001B[30m";
-private final static String GRAY = "\u001B[90m";
-private final static String RED = "\u001B[31m";
-private final static String CYAN = "\u001B[36m";
-private final static String BLUE = "\u001B[34m";
-private final static String GREEN = "\u001B[32m";
-private final static String YELLOW = "\u001B[33m";
-private final static String BG_BLACK  = "\u001B[100m";
+public class PetStoreTycoon {
+    // Color Variables
+    // These can be added to print statements to change the colors of the console
+    private final static String RESET = "\u001B[0m";
+    private final static String BLACK = "\u001B[30m";
+    private final static String GRAY = "\u001B[90m";
+    private final static String RED = "\u001B[31m";
+    private final static String CYAN = "\u001B[36m";
+    private final static String BLUE = "\u001B[34m";
+    private final static String GREEN = "\u001B[32m";
+    private final static String YELLOW = "\u001B[33m";
+    private final static String BG_BLACK  = "\u001B[100m";
 
-public static class PetStoreTycoon {
     // Set up user input program wide
     static Scanner input = new Scanner(System.in);
 
