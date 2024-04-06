@@ -118,40 +118,44 @@ public class PetStoreTycoon {
     }
     public static void addAnimal() {
         System.out.println("Add animal ----------------");
-        System.out.println("There are " + shelter.getTotal());
-        System.out.print("What type of animal? > " + CYAN);
+        System.out.println("There are " + shelter.getTotal() + " animals in the shelter");
+        if (shelter.getTotal() >= 20) {
+            System.out.println(RED + "There is no space for more animals. Please remove one and try again." + RESET); return;
+        }
+        System.out.println("What type of animal?");
         System.out.println(BLUE + "[1]" + RESET + " Cat");
         System.out.println(RED + "[2]" + RESET + " Dog");
         System.out.println(GREEN + "[3]" + RESET + " Other");
-        int typeInt = input.nextInt();
+        System.out.print(" > " + CYAN);
+        int typeInt = input.nextInt(); input.nextLine();
         if (typeInt == 1) {
-            System.out.print("What's its name? > " + CYAN);
+            System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
-            System.out.print("How old is it? > " + CYAN);
-            int age = input.nextInt();
+            System.out.print(RESET + "How old is it? > " + CYAN);
+            int age = input.nextInt(); input.nextLine();
 
-            System.out.print("Enter a microchip if available > " + CYAN);
-            int chip = input.nextInt();
+            System.out.print(RESET + "Enter a microchip if available or -1 if it is not > " + CYAN);
+            int chip = input.nextInt(); input.nextLine();
 
             boolean fixed;
-            System.out.print("Is the cat fixed? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Is the cat fixed? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) fixed = true;
             else fixed = false;
 
             boolean surrendered;
-            System.out.print("Was the cat surrendered? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Was the cat surrendered? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) surrendered = true; 
             else surrendered = false;
 
-            System.out.print("Enter the eye color > " + CYAN);
+            System.out.print(RESET + "Enter the eye color > " + CYAN);
             String eyeColor = input.nextLine();
 
-            System.out.print("Enter the type > " + CYAN);
+            System.out.print(RESET + "Enter the type > " + CYAN);
             String type = input.nextLine();
 
             boolean outdoor;
-            System.out.print("Was the cat an outdoor cat? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Was the cat an outdoor cat? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) outdoor = true;
             else outdoor = false;
 
@@ -160,33 +164,33 @@ public class PetStoreTycoon {
             
         }
         if (typeInt == 2) {
-            System.out.print("What's its name? > " + CYAN);
+            System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
-            System.out.print("How old is it? > " + CYAN);
-            int age = input.nextInt();
+            System.out.print(RESET + "How old is it? > " + CYAN);
+            int age = input.nextInt(); input.nextLine();
 
-            System.out.print("Enter a microchip if available > " + CYAN);
-            int chip = input.nextInt();
+            System.out.print(RESET + "Enter a microchip if available > " + CYAN);
+            int chip = input.nextInt(); input.nextLine();
 
             boolean fixed;
-            System.out.print("Is the dog fixed? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Is the dog fixed? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) fixed = true;
             else fixed = false;
 
             boolean surrendered;
-            System.out.print("Was the dog surrendered? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Was the dog surrendered? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) surrendered = true; 
             else surrendered = false;
 
-            System.out.print("Enter the breed > " + CYAN);
+            System.out.print(RESET + "Enter the breed > " + CYAN);
             String breed = input.nextLine();
 
-            System.out.print("Enter the color > " + CYAN);
+            System.out.print(RESET + "Enter the color > " + CYAN);
             String color = input.nextLine();
 
             boolean friendly;
-            System.out.print("Is the dog friendly? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Is the dog friendly? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) friendly = true;
             else friendly = false;
 
@@ -194,22 +198,22 @@ public class PetStoreTycoon {
             shelter.addDog(name,age,chip,fixed,surrendered,breed,color,friendly);
         }
         if (typeInt == 3) {
-            System.out.print("What's its name? > " + CYAN);
+            System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
-            System.out.print("How old is it? > " + CYAN);
-            int age = input.nextInt();
+            System.out.print(RESET + "How old is it? > " + CYAN);
+            int age = input.nextInt(); input.nextLine();
 
-            System.out.print("Enter a microchip if available > " + CYAN);
-            int chip = input.nextInt();
+            System.out.print(RESET + "Enter a microchip if available > " + CYAN);
+            int chip = input.nextInt(); input.nextLine();
 
             boolean fixed;
-            System.out.print("Is the animal fixed? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Is the animal fixed? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) fixed = true;
             else fixed = false;
 
             boolean surrendered;
-            System.out.print("Was the animal surrendered? (Y, N) > " + CYAN);
+            System.out.print(RESET + "Was the animal surrendered? (Y, N) > " + CYAN);
             if (input.nextLine().equals("y")) surrendered = true; 
             else surrendered = false;
 
