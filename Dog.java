@@ -37,6 +37,6 @@ public class Dog extends shelterAnimal {
     }
 
     public String toString(){
-        return this.getName() + " is a " + this.color + " " + this.breed;
+        return this.getName() + " is a " + this.color + " " + this.breed + " and has spent " + this.getDays() + " days in the shelter";
     }
 }

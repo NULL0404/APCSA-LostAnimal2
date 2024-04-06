@@ -36,6 +36,6 @@ public class Cat extends shelterAnimal {
     }
 
     public String toString(){
-        return this.getName() + " is a " + this.type + " with " + this.eyeColor + " eyes";
+        return this.getName() + " is a " + this.type + " with " + this.eyeColor + " eyes " + " and has spent " + this.getDays() + " days in the shelter";
     }
 }
