@@ -109,8 +109,8 @@ public class animalShelter {
 
     public void removeAnimal(int id) {
         totalAnimals--;
-            if (database.get(i) instanceof Cat) numCats--;
-            else if (database.get(i) instanceof Dog) numDogs--;
+            if (database.get(id) instanceof Cat) numCats--;
+            else if (database.get(id) instanceof Dog) numDogs--;
         database.remove(id);
     }
 
