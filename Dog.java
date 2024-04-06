@@ -3,8 +3,8 @@ public class Dog extends shelterAnimal{
     private String color;
     private boolean friendly;
 
-    public Dog(String name, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered, String breed, String color, boolean friendly) {
-    super(name, animalAge, microchipData, isFixed, isSurrendered); 
+    public Dog(String nameOfAnimal, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered, String breed, String color, boolean friendly) {
+    super(nameOfAnimal, animalAge, microchipData, isFixed, isSurrendered); 
     this.breed = breed;
     this.color = color;
     this.friendly = friendly;
@@ -12,18 +12,18 @@ public class Dog extends shelterAnimal{
 
     public void isFriendly(){
         if(friendly){
-            System.out.println(this.name + " is a friendly dog.");
+            System.out.println(this.nameOfAnimal + " is a friendly dog.");
         }else{
-            System.out.println(this.name + " is not friendly.");
+            System.out.println(this.nameOfAnimal + " is not friendly.");
         }
     }
 
      public void dogColor(){
-            System.out.println(this.name + " has " + this.color + " fur.");
+            System.out.println(this.nameOfAnimal + " has " + this.color + " fur.");
         }
 
     public void dogBreed(){
-            System.out.println(this.name + " is a " + this.breed);
+            System.out.println(this.nameOfAnimal + " is a " + this.breed);
         }
 }
 
