@@ -33,7 +33,7 @@ public class PetStoreTycoon {
 
             // Print out the menu list
             // Menu options are colored blue for print, green for sort, and yellow for modification. Description in gray, main action in black.
-            System.out.println("Main menu -----------------");
+            System.out.println(GRAY + "Main menu -----------------");
             System.out.println(BLUE + "[1]" + RESET + " Print" + GRAY + " all shelter animals");
             System.out.println(BLUE + "[2]" + RESET + " Print" + GRAY + " only shelter animals with chips");
             System.out.println(BLUE + "[3]" + RESET + " Print" + GRAY + " only one species of animal");
