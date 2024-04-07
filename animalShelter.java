@@ -115,26 +115,49 @@ public class animalShelter {
     }
 
     // modifying animal
-    public void modifyAnimal(String animalData, String modifier, String newData){
+    public void modifyAnimal(String type, String animalData, String modifier, String newData){
         for(shelterAnimal animal : database){
-            if((animal.getName().equals(animalData))||(animal.getChip() == (Integer.parseInt(animalData)))){
-                if(modifier.equals("name")){ // if they want to change the name
-                    animal.setName(newData);}
+            if (type.equals("name")){
+                if((animal.getName().equals(animalData))){
+                    if(modifier.equals("name")){ // if they want to change the name
+                        animal.setName(newData);}
 
-                if(modifier.equals("type")){ // if they want to change the type
-                    System.out.println("Please recreate the animal");}
+                    if(modifier.equals("type")){ // if they want to change the type
+                        System.out.println("Please recreate the animal");}
 
-                if(modifier.equals("age")){ // if they want to change the age
-                    animal.setAge(Integer.parseInt(newData));}
+                    if(modifier.equals("age")){ // if they want to change the age
+                        animal.setAge(Integer.parseInt(newData));}
 
-                if(modifier.equals("fixed")){ // if they want to change if fixed
-                    animal.setFixed(Boolean.parseBoolean(newData));}
+                    if(modifier.equals("fixed")){ // if they want to change if fixed
+                        animal.setFixed(Boolean.parseBoolean(newData));}
 
-                if(modifier.equals("days in")){ // if they want to change how many days in
-                    animal.setDays(Integer.parseInt(newData));}
+                    if(modifier.equals("days in")){ // if they want to change how many days in
+                        animal.setDays(Integer.parseInt(newData));}
 
-                if(modifier.equals("microchip")){ // if they want to change chip data
-                    animal.setChip(Integer.parseInt(newData));}
+                    if(modifier.equals("microchip")){ // if they want to change chip data
+                        animal.setChip(Integer.parseInt(newData));}
+                }
+            }
+            if (type.equals("micrchip")){
+                if (animal.getChip() == (Integer.parseInt(animalData))){
+                    if(modifier.equals("name")){ // if they want to change the name
+                        animal.setName(newData);}
+
+                    if(modifier.equals("type")){ // if they want to change the type
+                        System.out.println("Please recreate the animal");}
+
+                    if(modifier.equals("age")){ // if they want to change the age
+                        animal.setAge(Integer.parseInt(newData));}
+
+                    if(modifier.equals("fixed")){ // if they want to change if fixed
+                        animal.setFixed(Boolean.parseBoolean(newData));}
+
+                    if(modifier.equals("days in")){ // if they want to change how many days in
+                        animal.setDays(Integer.parseInt(newData));}
+
+                    if(modifier.equals("microchip")){ // if they want to change chip data
+                        animal.setChip(Integer.parseInt(newData));}
+                }
             }
         }
     }

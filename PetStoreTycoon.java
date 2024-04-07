@@ -86,14 +86,16 @@ public class PetStoreTycoon {
         else if (command.equals("d")) addAnimal(); // Move to the addAnimal function
 
         else if (command.equals("e")) {
+            System.out.println("Finding by name or micrchip?:");
+            String type = input.nextLine();
             System.out.println("Name or Microchip Data of Animal To Be Changed");
             String animalModified = input.nextLine();
             System.out.println("What data would you like to change?");
-            System.out.println("[Name][Type][Age][Tag][Fixed][Days In][Microchip]");
+            System.out.println("[name][type][age][tag][fixed][days in][microchip]");
             String modifier = input.nextLine();
             System.out.println("New Data:");
             String newData = input.nextLine();
-            shelter.modifyAnimal(animalModified, modifier, newData);
+            shelter.modifyAnimal(type, animalModified, modifier, newData);
         }
 
         else System.out.println(RED + "Command not found" + RESET);
