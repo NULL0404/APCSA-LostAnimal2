@@ -125,22 +125,26 @@ public class animalShelter {
             animal.setChip(Integer.parseInt(newData));}
     }
 
-    // print animals in order of time in shelter(shortest to longest)
-    public void printOrganized(){
-        ArrayList<Integer> temporary = new ArrayList<Integer>();
+    // sort animals in order of time in shelter(shortest to longest)
+    public void printDaysSort(){
         for(int i = 0; i < database.size()-1; i++){
             int minIndex = i;
             for(int j = i+1; j < database.size(); j++){
                 if(database.get(j).getDays() < database.get(minIndex).getDays()){
-                    minIndex = j;}
-                temporary.add(minIndex);
+                    minIndex = j;
+                }
+                shelterAnimal temp = database.get(minIndex);
+                shelterAnimal current = database.get(i);
+                database.set(minIndex, current);
+                database.set(i, temp);
             }
         }
 
-        for(int index : temporary){ // printing all animals sorted
-            System.out.println("Name: " + (database.get(index).getName()));
+        for(int i = 0; i < database.size(); i++){ // printing all animals sorted
+            System.out.println("Name: " + (database.get(i).getName()));
             // System.out.println("Type: " + (database.get(index).getType())); Figure this out with subclass
-            System.out.println("Days In Shelter: " + (database.get(index).getDays()));
+            System.out.println("new Position: " + i);
+            System.out.println("Days In Shelter: " + (database.get(i).getDays()));
             System.out.println("---------------------------");
         }
     }

@@ -75,6 +75,8 @@ public class PetStoreTycoon {
 
         else if (command.equals("5")) shelter.printNonFixed();
 
+        else if (command.equals("a")) shelter.printDaysSort();
+
         else if (command.equals("c")) {
             shelter.printAllAnimals();
             System.out.print("Enter the # corresponding to the animal you would like to remove, or -1 to cancel > " + CYAN);
@@ -115,14 +117,14 @@ public class PetStoreTycoon {
         shelter.addAnimal("Jordan Belfort", 4, 999127588, false, true, 5);
         shelter.addDog("Tangerine", 8, 557742143, true, true, "australian sheperd", "brown", true, 0);
         
-        shelter.addDog("Meatball", 2, 458513048, false, true, "pug", "brown", true, -1);
+        shelter.addDog("Meatball", 2, 458513048, false, true, "pug", "brown", true, 1);
         shelter.addDog("Jack", 3, 180869070, false, true, "lab", "brown", true, 4);
         shelter.addCat("Keivan", 17, 332915636, true, false, "green", "black", true, 19);
         shelter.addCat("Gribber", 16, 379827576, true, true, "blue", "tuxedo", false, 3);
         shelter.addAnimal("Justin", 17, 613340565, true, false, 0);
 
         shelter.addAnimal("Waltuh", 66, 189156965, false, true, 232);
-        shelter.addCat("Gambit", 4, 425378256, true, true, null, null, false, -1);
+        shelter.addCat("Gambit", 4, 425378256, true, true, null, null, false, 1);
         shelter.addCat("Rocket", 6, 934488781, true, true, null, null, false, 1);
         shelter.addAnimal("Bryan", 43, 778949110, true, true, 999);
         shelter.addDog("Robin", 3, 518650274, true, true, null, "brown", true, 8);
