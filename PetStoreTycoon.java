@@ -75,7 +75,9 @@ public class PetStoreTycoon {
 
         else if (command.equals("5")) shelter.printNonFixed();
 
-        else if (command.equals("a")) shelter.printDaysSort();
+        else if (command.equals("a")) shelter.printDaysSort(); // menu for sorting by days
+
+        else if (command.equals("b")) shelter.printChipSort(); // meun for sorting by chip data
 
         else if (command.equals("c")) {
             shelter.printAllAnimals();
