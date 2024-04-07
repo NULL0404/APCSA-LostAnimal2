@@ -12,7 +12,7 @@ public class PetStoreTycoon {
     private final static String RED = "\u001B[31m";
     private final static String CYAN = "\u001B[36m";
     private final static String BLUE = "\u001B[34m";
-    private final static String GREEN = "\u001B[32m";
+    private final static String GREEN = "\u001B[32m";      
     private final static String YELLOW = "\u001B[33m";
     private final static String BG_BLACK  = "\u001B[100m";
 
@@ -86,16 +86,16 @@ public class PetStoreTycoon {
         else if (command.equals("d")) addAnimal(); // Move to the addAnimal function
 
         else if (command.equals("e")) {
-            System.out.println("Finding by name or micrchip?:");
-            String type = input.nextLine();
-            System.out.println("Name or Microchip Data of Animal To Be Changed");
-            String animalModified = input.nextLine();
+            shelter.printAllAnimals();
+            System.out.print("Enter the # corresponding to the animal you would like to modify, or -1 to cancel > " + CYAN);
+            int modifyId = input.nextInt(); input.nextLine();
+            if (modifyId == -1) return;
             System.out.println("What data would you like to change?");
             System.out.println("[name][type][age][tag][fixed][days in][microchip]");
             String modifier = input.nextLine();
             System.out.println("New Data:");
             String newData = input.nextLine();
-            shelter.modifyAnimal(type, animalModified, modifier, newData);
+            shelter.modifyAnimal(modifyId, modifier, newData);
         }
 
         else System.out.println(RED + "Command not found" + RESET);
