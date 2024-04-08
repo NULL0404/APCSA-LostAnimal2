@@ -58,59 +58,66 @@ public class PetStoreTycoon {
     // Runs the correct methods based on the command from the user
     public static void menuInterpretor (String command) {
 
-        // menu workings
-        if (command.equals("1")) shelter.printAllAnimals(); // menu for printing all animals
+        try {
+            // menu workings
+            if (command.equals("1")) shelter.printAllAnimals(); // menu for printing all animals
 
-        else if (command.equals("2")) shelter.printChip(); // menu for printing animals with chips
+            else if (command.equals("2")) shelter.printChip(); // menu for printing animals with chips
 
-        else if (command.equals("3")) {
-            // Ask the user for the species and run the printLostOfSpecies function on that input
-            System.out.print("What species do you want to filter? > " + CYAN); // User input in cyan
-            String species = input.nextLine();
-            System.out.print(RESET); // Clear cyan color
-            shelter.printSpecies(species);
-        }
-
-        else if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
-
-        else if (command.equals("5")) shelter.printNonFixed();
-
-        else if (command.equals("a")) shelter.printDaysSort(BLUE, GRAY, RESET); // menu for sorting by days
-
-        else if (command.equals("b")) shelter.printChipSort(BLUE, GRAY, RESET); // meun for sorting by chip data
-
-        else if (command.equals("c")) {
-            shelter.printAllAnimals();
-            System.out.print("Enter the # corresponding to the animal you would like to remove, or -1 to cancel > " + CYAN);
-            int remove = input.nextInt(); input.nextLine();
-            if (remove < -1){
-                System.out.println(RED + "incorrect input, try again");
-                return;
+            else if (command.equals("3")) {
+                // Ask the user for the species and run the printLostOfSpecies function on that input
+                System.out.print("What species do you want to filter? > " + CYAN); // User input in cyan
+                String species = input.nextLine();
+                System.out.print(RESET); // Clear cyan color
+                shelter.printSpecies(species);
             }
-            if (remove == -1) return;
-            shelter.removeAnimal(remove);
-        }
 
-        else if (command.equals("d")) addAnimal(); // Move to the addAnimal function
+            else if (command.equals("4")) shelter.printAdoptables(); // menu for only adoptables
 
-        else if (command.equals("e")) {
-            shelter.printAllAnimals();
-            System.out.print("Enter the # corresponding to the animal you would like to modify, or -1 to cancel > " + CYAN);
-            int modifyId = input.nextInt(); input.nextLine();
-            if (modifyId == -1) return;
-            if (modifyId < -1){
-                System.out.println(RED + "command incorrect, please try again");
-                return;
+            else if (command.equals("5")) shelter.printNonFixed();
+
+            else if (command.equals("a")) shelter.printDaysSort(BLUE, GRAY, RESET); // menu for sorting by days
+
+            else if (command.equals("b")) shelter.printChipSort(BLUE, GRAY, RESET); // meun for sorting by chip data
+
+            else if (command.equals("c")) {
+                shelter.printAllAnimals();
+                System.out.print("Enter the # corresponding to the animal you would like to remove, or -1 to cancel > " + CYAN);
+                int remove = input.nextInt(); input.nextLine();
+                if (remove < -1){
+                    System.out.println(RED + "incorrect input, try again");
+                    return;
+                }
+                if (remove == -1) return;
+                shelter.removeAnimal(remove);
             }
-            System.out.println(RESET + "What data would you like to change?");
-            System.out.print("[name][type][age][tag][fixed][days in][microchip] > " + CYAN);
-            String modifier = input.nextLine();
-            System.out.print(RESET + "New Data: > " + CYAN);
-            String newData = input.nextLine();
-            shelter.modifyAnimal(modifyId, modifier, newData);
+
+            else if (command.equals("d")) addAnimal(); // Move to the addAnimal function
+
+            else if (command.equals("e")) {
+                shelter.printAllAnimals();
+                System.out.print("Enter the # corresponding to the animal you would like to modify, or -1 to cancel > " + CYAN);
+                int modifyId = input.nextInt(); input.nextLine();
+                if (modifyId == -1) return;
+                if (modifyId < -1){
+                    System.out.println(RED + "command incorrect, please try again");
+                    return;
+                }
+                System.out.println(RESET + "What data would you like to change?");
+                System.out.print("[name][type][age][tag][fixed][days in][microchip] > " + CYAN);
+                String modifier = input.nextLine();
+                System.out.print(RESET + "New Data: > " + CYAN);
+                String newData = input.nextLine();
+                shelter.modifyAnimal(modifyId, modifier, newData);
+            }
+
+            else System.out.println(RED + "Command not found" + RESET);
         }
 
-        else System.out.println(RED + "Command not found" + RESET);
+        catch (Exception e){
+            System.out.println(RED + "ERROR HAS OCCURRED: PLEASE CHECK YOUR RESPONSES AND TRY AGAIN");
+            System.out.println("(check you're not typing a letter when expecting a nunmber)");
+        }
     }
 
     public static void PopulateArray() {
@@ -190,7 +197,7 @@ public class PetStoreTycoon {
             shelter.addCat(name,age,chip,fixed,surrendered,eyeColor,type,outdoor, time);
             
         }
-        if (userInput.equals("dog") || userInput.equals("2")) {
+        else if (userInput.equals("dog") || userInput.equals("2")) {
             System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
@@ -227,7 +234,7 @@ public class PetStoreTycoon {
             System.out.println(RESET + "Adding the dog to the database...");
             shelter.addDog(name,age,chip,fixed,surrendered,breed,color,friendly, time);
         }
-        if (userInput.equals("other") || userInput.equals("3")) {
+        else if (userInput.equals("other") || userInput.equals("3")) {
             System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
@@ -254,6 +261,6 @@ public class PetStoreTycoon {
             shelter.addAnimal(name,age,chip,fixed,surrendered, time);
         }
         else
-            System.out.println(RED + "command incorrect, please try again");
+            System.out.println(RED + "command incorrect, please try again1");
     }
 }
