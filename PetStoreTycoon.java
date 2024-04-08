@@ -83,6 +83,10 @@ public class PetStoreTycoon {
             shelter.printAllAnimals();
             System.out.print("Enter the # corresponding to the animal you would like to remove, or -1 to cancel > " + CYAN);
             int remove = input.nextInt(); input.nextLine();
+            if (remove < -1){
+                System.out.println(RED + "incorrect input, try again");
+                return;
+            }
             if (remove == -1) return;
             shelter.removeAnimal(remove);
         }
@@ -95,7 +99,7 @@ public class PetStoreTycoon {
             int modifyId = input.nextInt(); input.nextLine();
             if (modifyId == -1) return;
             if (modifyId < -1){
-                System.out.println("command incorrect, please try again");
+                System.out.println(RED + "command incorrect, please try again");
                 return;
             }
             System.out.println("What data would you like to change?");
@@ -250,6 +254,6 @@ public class PetStoreTycoon {
             shelter.addAnimal(name,age,chip,fixed,surrendered, time);
         }
         else
-            System.out.println("command incorrect, please try again");
+            System.out.println(RED + "command incorrect, please try again");
     }
 }
