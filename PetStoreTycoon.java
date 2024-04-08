@@ -102,10 +102,10 @@ public class PetStoreTycoon {
                 System.out.println(RED + "command incorrect, please try again");
                 return;
             }
-            System.out.println("What data would you like to change?");
-            System.out.println("[name][type][age][tag][fixed][days in][microchip]");
+            System.out.println(RESET + "What data would you like to change?");
+            System.out.print("[name][type][age][tag][fixed][days in][microchip] > " + CYAN);
             String modifier = input.nextLine();
-            System.out.println("New Data:");
+            System.out.print(RESET + "New Data: > " + CYAN);
             String newData = input.nextLine();
             shelter.modifyAnimal(modifyId, modifier, newData);
         }

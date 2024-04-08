@@ -137,6 +137,7 @@ public class animalShelter {
         if (modifier.equals("microchip")) { // if they want to change chip data
             animal.setChip(Integer.parseInt(newData));
         }
+        animal.print();
     }
 
     // sort animals in order of time in shelter(shortest to longest)
