@@ -140,7 +140,7 @@ public class animalShelter {
     }
 
     // sort animals in order of time in shelter(shortest to longest)
-    public void printDaysSort() {
+    public void printDaysSort(String spaceColor, String regColor, String RESET) {
         for (int i = 0; i < database.size() - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < database.size(); j++) {
@@ -155,16 +155,30 @@ public class animalShelter {
         }
 
         for (int i = 0; i < database.size(); i++) { // printing all animals sorted
-            System.out.println("Name: " + (database.get(i).getName()));
-            // System.out.println("Type: " + (database.get(index).getType())); Figure this
-            // out with subclass
+            // printing name of animal
+            System.out.println(regColor + "Name: " + (database.get(i).getName()));
+
+            // checking if its a cat, dog, or other, and printing type
+            System.out.print("Type: ");
+            if (database.get(i) instanceof Cat)
+                System.out.println(((Cat) database.get(i)).getCatType());
+            else if (database.get(i) instanceof Dog)
+                System.out.println(((Dog) database.get(i)).getDogBreed());
+            else
+                System.out.println("Other");
+
+            // printing position in database
             System.out.println("New Position: " + i);
+
+            // printing days in shelter
             System.out.println("Days In Shelter: " + (database.get(i).getDays()));
-            System.out.println("---------------------------");
+
+            // spacer
+            System.out.println(spaceColor + "---------------------------" + RESET);
         }
     }
 
-    public void printChipSort() {
+    public void printChipSort(String spaceColor, String regColor, String RESET) {
         for (int i = 1; i < database.size(); ++i) {
             int key = database.get(i).getChip();
             int j = i - 1;
@@ -176,12 +190,26 @@ public class animalShelter {
         }
 
         for (int i = 0; i < database.size(); i++) { // printing all animals sorted
-            System.out.println("Name: " + (database.get(i).getName()));
-            // System.out.println("Type: " + (database.get(index).getType())); Figure this
-            // out with subclass
+            // printing name of animal
+            System.out.println(regColor + "Name: " + (database.get(i).getName()));
+
+            // checking if its a cat, dog, or other, and printing type
+            System.out.print("Type: ");
+            if (database.get(i) instanceof Cat)
+                System.out.println(((Cat) database.get(i)).getCatType());
+            else if (database.get(i) instanceof Dog)
+                System.out.println(((Dog) database.get(i)).getDogBreed());
+            else
+                System.out.println("Other");
+
+            // printing position in database
             System.out.println("New Position: " + i);
+
+            // printing chip data
             System.out.println("Chip data: " + (database.get(i).getChip()));
-            System.out.println("---------------------------");
+
+            // spacer
+            System.out.println(spaceColor + "---------------------------" + RESET);
         }
     }
 }
