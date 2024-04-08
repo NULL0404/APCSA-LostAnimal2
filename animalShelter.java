@@ -169,8 +169,8 @@ public class animalShelter {
             int key = database.get(i).getChip();
             int j = i - 1;
             while (j >= 0 && database.get(j).getChip() > key) {
-                database.set(j + 1, database.get(j));
-                j = j - 1;
+                database.set(j, database.get(j));
+                j--;
             }
             database.get(j + 1).setChip(key);
         }
