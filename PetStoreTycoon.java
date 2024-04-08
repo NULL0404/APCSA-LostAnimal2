@@ -94,6 +94,10 @@ public class PetStoreTycoon {
             System.out.print("Enter the # corresponding to the animal you would like to modify, or -1 to cancel > " + CYAN);
             int modifyId = input.nextInt(); input.nextLine();
             if (modifyId == -1) return;
+            if (modifyId < -1){
+                System.out.println("command incorrect, please try again");
+                return;
+            }
             System.out.println("What data would you like to change?");
             System.out.println("[name][type][age][tag][fixed][days in][microchip]");
             String modifier = input.nextLine();
@@ -108,28 +112,28 @@ public class PetStoreTycoon {
     public static void PopulateArray() {
         // 5 dogs, 10 cats, 5 other
         shelter.addDog("Scout", 12, 780701625, true, true, "Mutt", "black and white", false, 5);
-        shelter.addCat("Mateo", 4, 831462500, true, true, "green", "Tabby", false, 7);
+        shelter.addCat("Mateo", 4, -1, true, true, "green", "Tabby", false, 7);
         shelter.addCat("Maxwell", 13, 586892107, true, false, "green", "tuxedo", true, 8);
-        shelter.addCat("Eric", 16, 806542905, false, true, "blue", "white", true, 2);
-        shelter.addCat("Ethan", 16, 604164455, false, false, "blue", "black", true, 20);
+        shelter.addCat("Eric", 16, 806542905, false, false, "blue", "white", true, 2);
+        shelter.addCat("Ethan", 16, -1, false, false, "blue", "black", true, 20);
         
         shelter.addCat("Joshua", 16, 950646549, true, true, "hazel", "Tabby", true, 15);
-        shelter.addCat("Joseph Robinette Biden Jr.", 900, 115959804, true, false, "hazel", "black", false, 72);
+        shelter.addCat("Joseph Robinette Biden Jr.", 900, -1, true, false, "hazel", "black", false, 72);
         shelter.addAnimal("Tonald Dohn Jrump", 77, 363881057, false, false, 19);
-        shelter.addAnimal("Jordan Belfort", 4, 999127588, false, true, 5);
+        shelter.addAnimal("Jordan Belfort", 4, -1, false, true, 5);
         shelter.addDog("Tangerine", 8, 557742143, true, true, "australian sheperd", "brown", true, 0);
         
         shelter.addDog("Meatball", 2, 458513048, false, true, "pug", "brown", true, 1);
-        shelter.addDog("Jack", 3, 180869070, false, true, "lab", "brown", true, 4);
+        shelter.addDog("Jack", 3, -1, false, true, "lab", "brown", true, 4);
         shelter.addCat("Keivan", 17, 332915636, true, false, "green", "black", true, 19);
-        shelter.addCat("Gribber", 16, 379827576, true, true, "blue", "tuxedo", false, 3);
-        shelter.addAnimal("Justin", 17, 613340565, true, false, 0);
+        shelter.addCat("Gribber", 16, 379827576, true, false, "blue", "tuxedo", false, 3);
+        shelter.addAnimal("Justin", 17, -1, true, false, 0);
 
         shelter.addAnimal("Waltuh", 66, 189156965, false, true, 232);
         shelter.addCat("Gambit", 4, 425378256, true, true, null, null, false, 1);
-        shelter.addCat("Rocket", 6, 934488781, true, true, null, null, false, 1);
+        shelter.addCat("Rocket", 6, -1, true, true, null, null, false, 1);
         shelter.addAnimal("Bryan", 43, 778949110, true, true, 999);
-        shelter.addDog("Robin", 3, 518650274, true, true, null, "brown", true, 8);
+        shelter.addDog("Robin", 3, 518650274, true, false, null, "brown", true, 8);
         
     }
     public static void addAnimal() {
@@ -143,8 +147,8 @@ public class PetStoreTycoon {
         System.out.println(RED + "[2]" + RESET + " Dog");
         System.out.println(GREEN + "[3]" + RESET + " Other");
         System.out.print(" > " + CYAN);
-        int typeInt = input.nextInt(); input.nextLine();
-        if (typeInt == 1) {
+        String userInput = input.nextLine();
+        if (userInput.equals("cat") || userInput.equals("1")){
             System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
@@ -182,7 +186,7 @@ public class PetStoreTycoon {
             shelter.addCat(name,age,chip,fixed,surrendered,eyeColor,type,outdoor, time);
             
         }
-        if (typeInt == 2) {
+        if (userInput.equals("dog") || userInput.equals("2")) {
             System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
@@ -219,7 +223,7 @@ public class PetStoreTycoon {
             System.out.println(RESET + "Adding the dog to the database...");
             shelter.addDog(name,age,chip,fixed,surrendered,breed,color,friendly, time);
         }
-        if (typeInt == 3) {
+        if (userInput.equals("other") || userInput.equals("3")) {
             System.out.print(RESET + "What's its name? > " + CYAN);
             String name = input.nextLine();
 
@@ -244,7 +248,8 @@ public class PetStoreTycoon {
 
             System.out.println(RESET + "Adding the animal to the database...");
             shelter.addAnimal(name,age,chip,fixed,surrendered, time);
-            
         }
+        else
+            System.out.println("command incorrect, please try again");
     }
 }

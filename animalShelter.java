@@ -103,6 +103,11 @@ public class animalShelter {
 
     // removing the animal
     public void removeAnimal(int id) {
+        if (id < -1){
+            System.out.println("incorrect input, try again");
+            return;
+        }
+
         totalAnimals--;
         if (database.get(id) instanceof Cat)
             numCats--;
