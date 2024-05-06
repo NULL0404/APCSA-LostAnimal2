@@ -44,6 +44,7 @@ public class PetStoreTycoon {
             System.out.println(YELLOW + "[C]" + RESET + " Remove" + GRAY + " an animal from the database");
             System.out.println(YELLOW + "[D]" + RESET + " Add" + GRAY + " an animal to the database");
             System.out.println(YELLOW + "[E]" + RESET + " Modify" + GRAY + " an animal in the database");
+            System.out.println(RED + "[exit]" + RESET + " Exit");
             System.out.print(RESET); // Reset console colors
 
             // Get command from user
@@ -110,6 +111,8 @@ public class PetStoreTycoon {
                 String newData = input.nextLine();
                 shelter.modifyAnimal(modifyId, modifier, newData);
             }
+
+            else if (command.equals("exit")) System.exit(0);
 
             else System.out.println(RED + "Command not found" + RESET);
         }
