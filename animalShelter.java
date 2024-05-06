@@ -184,7 +184,7 @@ public class animalShelter {
             int key = database.get(i).getChip();
             int j = i - 1;
             while (j >= 0 && database.get(j).getChip() > key) {
-                database.set(j, database.get(j));
+                database.set(j+1, database.get(j));
                 j--;
             }
             database.get(j + 1).setChip(key);
@@ -204,7 +204,7 @@ public class animalShelter {
                 System.out.println("Other");
 
             // printing position in database
-            System.out.println("New Position: " + i);
+            System.out.println("New Position: " + (i+1));
 
             // printing chip data
             System.out.println("Chip data: " + (database.get(i).getChip()));
