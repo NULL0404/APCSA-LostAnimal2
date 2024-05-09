@@ -1,10 +1,11 @@
 //Eric Dominguez
+//cat subclass
 public class Cat extends shelterAnimal {
     private String eyeColor;
     private String type;
     private boolean outdoor;
 
-    // Cat subclass constructor
+    // Cat subclass constructor, contains variables that set and change different traits of the cat animal 
     public Cat(String nameOfAnimal, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered,
             String eyeColor, String type, boolean outdoor, int time) {
         super(nameOfAnimal, animalAge, microchipData, isFixed, isSurrendered, time);
@@ -13,7 +14,7 @@ public class Cat extends shelterAnimal {
         this.outdoor = outdoor;
     }
 
-    // methods made to return and set different cat features
+    // methods made to return and set different variables declared in the constructor 
     public String getCatEye() {
         return eyeColor;
     }
@@ -38,7 +39,7 @@ public class Cat extends shelterAnimal {
         outdoor = newOutdoor;
     }
 
-    // Cat subclass toString to print the most important aspects
+    // Cat subclass toString to print the set features by the user 
     public String toString() {
         return this.getName() + " is a " + this.type + " with " + this.eyeColor + " eyes " + " and has spent "
                 + this.getDays() + " days in the shelter";
