@@ -1,10 +1,11 @@
 //Eric Dominguez
+//Dog subclass
 public class Dog extends shelterAnimal {
     private String breed;
     private String color;
     private boolean friendly;
 
-    // Dog subclass constructor
+    // Dog subclass constructor, contains variables that set and change different traits of the Dog animal
     public Dog(String nameOfAnimal, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered,
             String breed, String color, boolean friendly, int time) {
         super(nameOfAnimal, animalAge, microchipData, isFixed, isSurrendered, time);
@@ -13,7 +14,7 @@ public class Dog extends shelterAnimal {
         this.friendly = friendly;
     }
 
-    // Dog subclass methods to define and return different dog aspects
+    // methods made to return and set different variables declared in the constructor
     public boolean isFriendly() {
         return friendly;
 
@@ -39,7 +40,7 @@ public class Dog extends shelterAnimal {
         breed = newBreed;
     }
 
-    // Dog subclass toString to return the most important aspects of Dog subclass
+    // Cat subclass toString to print the set features by the user
     public String toString() {
         return this.getName() + " is a " + this.color + " " + this.breed + " and has spent " + this.getDays()
                 + " days in the shelter";
