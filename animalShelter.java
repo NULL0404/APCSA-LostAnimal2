@@ -138,7 +138,7 @@ public class animalShelter {
         animal.print();
     }
 
-    // sort animals in order of time in shelter(shortest to longest)
+    // Selection sort by days in shelter
     public void printDaysSort(String spaceColor, String regColor, String RESET) {
         for (int i = 0; i < database.size(); i++) {
             int minIndex = i;
@@ -153,7 +153,7 @@ public class animalShelter {
             }
         }
 
-        for (int i = 0; i < database.size(); i++) { // printing all animals sorted
+        for (int i = 0; i < database.size(); i++) { // Print the sorted list
             // printing name of animal
             System.out.println(regColor + "Name: " + (database.get(i).getName()));
 
@@ -177,15 +177,15 @@ public class animalShelter {
         }
     }
 
+    // Insertion sort by chip number
     public void printChipSort(String spaceColor, String regColor, String RESET) {
-        for (int i = 1; i < database.size(); ++i) {
-            int key = database.get(i).getChip();
-            int j = i - 1;
-            while (j >= 0 && database.get(j).getChip() > key) {
-                database.set(j+1, database.get(j));
-                j--;
+        for (int i = 0; i < database.size(); i++) {
+            for (int j = database.size()-2; j > i; j--) {
+                if (database.get(j).getChip() < database.get(i).getChip()) {
+                    database.add(i+1, database.remove(j));
+                    database.add(j, database.remove(i));
+                }
             }
-            database.get(j + 1).setChip(key);
         }
 
         for (int i = 0; i < database.size(); i++) { // printing all animals sorted
