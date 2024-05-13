@@ -29,6 +29,10 @@ public class shelterAnimal {
         return surrendered;
     }
 
+    public void setSurrendered(boolean surrendered) {
+        this.surrendered = surrendered;
+    }
+
     public int getMicrochip() {
         return microchip;
     }
@@ -81,6 +85,9 @@ public class shelterAnimal {
         else System.out.println("No");
         System.out.print("Tagged? ");
         if (microchip != -1) System.out.println("Yes");
+        else System.out.println("No");
+        System.out.print("Surrendered? ");
+        if (surrendered) System.out.println("Yes");
         else System.out.println("No");
     }
 

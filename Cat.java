@@ -1,5 +1,6 @@
-//Eric Dominguez
-//cat subclass
+// Eric Dominguez
+// cat subclass
+
 public class Cat extends shelterAnimal {
     private String eyeColor;
     private String type;
@@ -37,6 +38,16 @@ public class Cat extends shelterAnimal {
 
     public void setOutdoor(boolean newOutdoor) {
         outdoor = newOutdoor;
+    }
+
+    @Override
+    public void print() { // Override the superclass print to include subclass informmation
+        super.print();    // Call the superclass print statement to get that data, then print the rest
+        System.out.println("Eye Color: " + eyeColor);
+        System.out.println("Type: " + type);
+        System.out.print("Outdoor? ");
+        if (outdoor) System.out.println("Yes");
+        else System.out.println("No");
     }
 
     // Cat subclass toString to print the set features by the user 

@@ -72,8 +72,7 @@ public class animalShelter {
     }
 
     // Function to create a cat
-    public void addCat(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered,
-            String eyeColor, String type, boolean outdoor, int time) {
+    public void addCat(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String eyeColor, String type, boolean outdoor, int time) {
         Cat newCat = new Cat(name, animalAge, microchip, isFixed, isSurrendered, eyeColor, type, outdoor, time);
         database.add(newCat);
         totalAnimals++;
@@ -81,8 +80,7 @@ public class animalShelter {
     }
 
     // Function to create an other animal
-    public void addDog(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String breed,
-            String color, boolean friendly, int time) {
+    public void addDog(String name, int animalAge, int microchip, boolean isFixed, boolean isSurrendered, String breed, String color, boolean friendly, int time) {
         Dog newDog = new Dog(name, animalAge, microchip, isFixed, isSurrendered, breed, color, friendly, time);
         database.add(newDog);
         totalAnimals++;
@@ -110,33 +108,33 @@ public class animalShelter {
             numDogs--;
         database.remove(id);
     }
-
+    public shelterAnimal getAnimal(int index) {
+        return database.get(index);
+    }
     // modifying animal
     public void modifyAnimal(int id, String modifier, String newData) {
         shelterAnimal animal = database.get(id);
-        if (modifier.equals("name")) { // if they want to change the name
-            animal.setName(newData);
-        }
+        
+        if (modifier.equals("exit")) return;
+        else if (modifier.equals("n")) animal.setName(newData);                                 // Modify name
+        else if (modifier.equals("a")) animal.setAge(Integer.parseInt(newData));                // Modify age
+        else if (modifier.equals("f")) animal.setFixed(Boolean.parseBoolean(newData));          // Modify fixed
+        else if (modifier.equals("d")) animal.setDays(Integer.parseInt(newData));               // Modify days in
+        else if (modifier.equals("s")) animal.setSurrendered(Boolean.parseBoolean(newData));    // Modify fixed
+        else if (modifier.equals("m")) animal.setChip(Integer.parseInt(newData));               // Modify chip data
 
-        if (modifier.equals("type")) { // if they want to change the type
-            System.out.println("Please recreate the animal");
+        else if (animal instanceof Cat) {                                                       // For cat specific data ---
+            if (modifier.equals("e")) ((Cat)animal).setCatEye(newData);                         // Modify eye
+            if (modifier.equals("t")) ((Cat)animal).setCatType(newData);                        // Modify type
+            if (modifier.equals("o")) ((Cat)animal).setOutdoor(Boolean.parseBoolean(newData));  // Modify outdoor
         }
-
-        if (modifier.equals("age")) { // if they want to change the age
-            animal.setAge(Integer.parseInt(newData));
-        }
-
-        if (modifier.equals("fixed")) { // if they want to change if fixed
-            animal.setFixed(Boolean.parseBoolean(newData));
-        }
-
-        if (modifier.equals("days in")) { // if they want to change how many days in
-            animal.setDays(Integer.parseInt(newData));
-        }
-
-        if (modifier.equals("microchip")) { // if they want to change chip data
-            animal.setChip(Integer.parseInt(newData));
-        }
+        else if (animal instanceof Dog) {                                                       // For dog specific data ---
+            if (modifier.equals("b")) ((Dog)animal).setBreed(newData);                          // Modify breed
+            if (modifier.equals("e")) ((Dog)animal).setColor(newData);                          // Modify color
+            if (modifier.equals("f")) ((Dog)animal).setFriendly(Boolean.parseBoolean(newData)); // Modify friendly
+        }   
+        else System.out.println("\u001B[31m"+ "Warning: No data was modified. Please check your responses!" + "\u001B[0m"); // Warn if 
+        System.out.println("\u001B[0m" + "Updated animal: " + "\u001B[90m");
         animal.print();
     }
 

@@ -98,18 +98,49 @@ public class PetStoreTycoon {
             else if (command.equals("e")) {
                 shelter.printAllAnimals();
                 System.out.print("Enter the # corresponding to the animal you would like to modify, or -1 to cancel > " + CYAN);
-                int modifyId = input.nextInt(); input.nextLine();
-                if (modifyId == -1) return;
-                if (modifyId < -1){
+                int animalToModify = input.nextInt(); input.nextLine();
+                if (animalToModify == -1) return;
+                if (animalToModify < -1){
                     System.out.println(RED + "command incorrect, please try again");
                     return;
                 }
-                System.out.println(RESET + "What data would you like to change?");
-                System.out.print("[name][type][age][tag][fixed][days in][microchip] > " + CYAN);
-                String modifier = input.nextLine();
-                System.out.print(RESET + "New Data: > " + CYAN);
-                String newData = input.nextLine();
-                shelter.modifyAnimal(modifyId, modifier, newData);
+                System.out.println(RESET + "Modify an existing animal ---");
+                System.out.println(RED + "[EXIT]" + RESET);
+                System.out.println(BLUE + "[N]" + RESET + "ame");
+                System.out.println(BLUE + "[A]" + RESET + "ge");
+                System.out.println(BLUE + "[F]" + RESET + "ixed");
+                System.out.println(BLUE + "[D]" + RESET + "ays in the shelter");
+                System.out.println(BLUE + "[S]" + RESET + "urrendered");
+                System.out.println(BLUE + "[M]" + RESET + "icrochip");
+                if (shelter.getAnimal(animalToModify) instanceof Dog) {
+                    System.out.println(GREEN + "[B]" + RESET + "reed");
+                    System.out.println(GREEN + "[C]" + RESET + "olor");
+                    System.out.println(GREEN + "[F]" + RESET + "riendly");
+
+                    System.out.print(RESET + "Modify > " + CYAN);
+                    String DataToModify = input.nextLine();
+                    System.out.print(RESET + "New Data: > " + CYAN);
+                    String newData = input.nextLine();
+                    shelter.modifyAnimal(animalToModify, DataToModify, newData);
+                }
+                else if (shelter.getAnimal(animalToModify) instanceof Cat) {
+                    System.out.println(YELLOW + "[E]" + RESET + "ye color");
+                    System.out.println(YELLOW + "[T]" + RESET + "ype");
+                    System.out.println(YELLOW + "[O]" + RESET + "utdoor");
+
+                    System.out.print(RESET + "Modify > " + CYAN);
+                    String DataToModify = input.nextLine();
+                    System.out.print(RESET + "New Data: > " + CYAN);
+                    String newData = input.nextLine();
+                    shelter.modifyAnimal(animalToModify, DataToModify, newData);
+                }
+                else {
+                    System.out.print(RESET + "Modify > " + CYAN);
+                    String DataToModify = input.nextLine();
+                    System.out.print(RESET + "New Data: > " + CYAN);
+                    String newData = input.nextLine();
+                    shelter.modifyAnimal(animalToModify, DataToModify, newData);
+                }
             }
 
             else if (command.equals("exit")) System.exit(0);
@@ -118,8 +149,8 @@ public class PetStoreTycoon {
         }
 
         catch (Exception e){
-            System.out.println(RED + "ERROR HAS OCCURRED: PLEASE CHECK YOUR RESPONSES AND TRY AGAIN");
-            System.out.println("(check you're not typing a letter when expecting a nunmber)");
+            System.out.println(RED + "An unexpected error occured: " + GRAY + e + RESET);
+            System.out.println("Please ensure your answers are in the correct format and try again");
         }
     }
 
@@ -264,6 +295,6 @@ public class PetStoreTycoon {
             shelter.addAnimal(name,age,chip,fixed,surrendered, time);
         }
         else
-            System.out.println(RED + "command incorrect, please try again1");
+            System.out.println(RED + "Please enter a valid animal (dog, cat, other)" + RESET);
     }
 }

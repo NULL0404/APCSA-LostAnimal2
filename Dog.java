@@ -1,11 +1,13 @@
-//Eric Dominguez
-//Dog subclass
+// Eric Dominguez
+// Dog subclass
+
 public class Dog extends shelterAnimal {
     private String breed;
     private String color;
     private boolean friendly;
 
-    // Dog subclass constructor, contains variables that set and change different traits of the Dog animal
+    // Dog subclass constructor, contains variables that set and change different
+    // traits of the Dog animal
     public Dog(String nameOfAnimal, int animalAge, int microchipData, boolean isFixed, boolean isSurrendered,
             String breed, String color, boolean friendly, int time) {
         super(nameOfAnimal, animalAge, microchipData, isFixed, isSurrendered, time);
@@ -14,10 +16,10 @@ public class Dog extends shelterAnimal {
         this.friendly = friendly;
     }
 
-    // methods made to return and set different variables declared in the constructor
+    // methods made to return and set different variables declared in the
+    // constructor
     public boolean isFriendly() {
         return friendly;
-
     }
 
     public void setFriendly(boolean newFriendly) {
@@ -40,9 +42,18 @@ public class Dog extends shelterAnimal {
         breed = newBreed;
     }
 
+    @Override
+    public void print() { // Override the superclass print to include subclass informmation
+        super.print();    // Call the superclass print statement to get that data, then print the rest
+        System.out.println("Breed: " + breed);
+        System.out.println("Color: " + color);
+        System.out.print("Friendly? ");
+        if (friendly) System.out.println("Yes");
+        else System.out.println("No");
+    }
+
     // Cat subclass toString to print the set features by the user
     public String toString() {
-        return this.getName() + " is a " + this.color + " " + this.breed + " and has spent " + this.getDays()
-                + " days in the shelter";
+        return this.getName() + " is a " + this.color + " " + this.breed + " and has spent " + this.getDays() + " days in the shelter";
     }
 }
