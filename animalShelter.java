@@ -140,15 +140,15 @@ public class animalShelter {
 
     // sort animals in order of time in shelter(shortest to longest)
     public void printDaysSort(String spaceColor, String regColor, String RESET) {
-        for (int i = 0; i < database.size() - 1; i++) {
+        for (int i = 0; i < database.size(); i++) {
             int minIndex = i;
             for (int j = i + 1; j < database.size(); j++) {
                 if (database.get(j).getDays() < database.get(minIndex).getDays()) {
                     minIndex = j;
                 }
-                shelterAnimal temp = database.get(minIndex);
+                shelterAnimal temp = database.remove(minIndex);
                 shelterAnimal current = database.get(i);
-                database.set(minIndex, current);
+                database.add(minIndex, current);
                 database.set(i, temp);
             }
         }
